@@ -49,6 +49,7 @@ header {
   );
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #ece9e7;
+  box-shadow: 0px 0px 50px #0903106b;
 }
 
 body {
@@ -136,7 +137,7 @@ button.secondary:hover {
 
 .intro {
   text-align: left;
-  background: linear-gradient(230deg, #c6e7a3a0, rgba(178, 104, 198, 0.6));
+  background: linear-gradient(230deg, #c6e7a3a0, #b268c699);
   padding: 48px;
   border-top-left-radius: 48px;
   border-bottom-left-radius: 48px;
@@ -150,6 +151,7 @@ button.secondary:hover {
   z-index: 3;
   flex-wrap: wrap;
   border: 1px solid #ece9e7;
+  box-shadow: 0px 12px 100px #090310ad;
 }
 
 .intro_content {
@@ -191,24 +193,33 @@ button.secondary:hover {
   filter: blur(4px);
 }
 
+.achievement_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
 .achievement {
-  margin-top: 100px;
+  margin-top: 12px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 24px;
+  gap: 80px;
   min-width: 300px;
   flex-wrap: wrap;
+  border: 1px solid #ece9e7;
+  border-radius: 100px;
+  background: linear-gradient(160deg, #9e56f100, #d08de24e);
+  padding: 24px 36px;
+  box-shadow: 0px 12px 100px #090310ad;
 }
 .single {
-  padding: 24px 36px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  border: 1px solid #c6e7a3;
-  border-radius: 100px;
 }
 
 .single > div > * {
@@ -246,7 +257,7 @@ p {
 .card {
   position: relative;
   border: 1px solid #ece9e7;
-  box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
+  box-shadow: 0px 12px 100px #090310ad;
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(
@@ -305,6 +316,7 @@ p {
   border-top-right-radius: 48px;
   border-bottom-right-radius: 48px;
   border: 1px solid #ece9e7;
+  box-shadow: 0px 12px 100px #090310ad;
 }
 
 .vision_content {
