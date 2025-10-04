@@ -1,0 +1,60 @@
+/* Style sheet for job description page */
+
+/* Styling for top section */
+.jobs_intro {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 36px;
+    background: linear-gradient(
+    75deg,
+    rgba(145, 86, 241, 0.2),
+    rgba(212, 163, 226, 0.2)
+  );
+  padding: 48px;
+  border-radius: 48px;
+}
+.jobs_intro img {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.jobs_intro button{
+    margin: auto;
+    margin-top: 24px;
+}
+
+/* Styling for job list in short form */
+.job_list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: calc(1);
+    gap: 24px;
+}
+.job_card {
+    position: relative;
+    box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      rgba(145, 86, 241, 0.5),
+      rgba(212, 163, 226, 0.5)
+    );
+    backdrop-filter: blur(12px);
+    padding: 24px;
+    padding-left: 5%;
+}
+.job_card .title {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.job_card img {
+    width: 90%;
+    height: auto;
+}
+.job_card h4 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
