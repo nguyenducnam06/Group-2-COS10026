@@ -13,6 +13,10 @@ h1 {
     Calibri, "Trebuchet MS", sans-serif, sans-serif;
   font-size: 48px;
 }
+
+h2 {
+  font-size: 36px;
+}
 header {
   z-index: 10;
   position: sticky;
@@ -33,6 +37,15 @@ header {
 
 body {
   background: linear-gradient(180deg, rgb(32, 30, 75), rgb(20, 19, 33));
+}
+
+footer {
+  background: linear-gradient(
+    180deg,
+    rgba(145, 86, 241, 0.5),
+    rgba(32, 30, 75, 0.5)
+  );
+  padding: 48px;
 }
 
 .content {
@@ -90,7 +103,7 @@ button:hover {
 
 .intro_title {
   text-align: left;
-  /* max-width: 40%; */
+  max-width: 50%;
   background: linear-gradient(
     75deg,
     rgba(145, 86, 241, 0.2),
@@ -138,7 +151,6 @@ p {
 .card {
   position: relative;
   box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
-  /* padding: 4px; */
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(
@@ -173,4 +185,47 @@ p {
     rgba(35, 25, 51, 1)
   );
   backdrop-filter: blur(2px);
+}
+
+.number {
+  background: linear-gradient(60deg, rgb(145, 86, 241), rgb(212, 163, 226));
+  border-radius: 100%;
+  display: flex;
+  padding: 12px 32px;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
+}
+
+.vision_column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+}
+
+.vision_content {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.vision_title {
+  margin: 64px;
+  text-align: right;
+  width: 50%;
+  margin-left: auto;
+}
+
+.back {
+  position: fixed;
+  z-index: 9;
+  bottom: 24px;
+  right: 24px;
+}
+
+a {
+  text-decoration: none;
 }
