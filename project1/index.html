@@ -4,43 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage Job Application</title>
+    <title>NetVision - Home</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body id="top">
     <header>
         <h2>NetVision</h3>
             <nav>
-                <ul class="nav_bar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#">Job Description</a></li>
-                    <li><a href="#">Apply</a></li>
-                    <li><a href="#">About Us</a></li>
-                </ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Job Description</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
             </nav>
             <h3>Contact</h4>
     </header>
 
-    <button class="back"><a href="#">Back to top</a></button>
-    <nav class="content">
-        <section class="intro_title">
+    <button id="back" class="secondary"><a href="#top"><img src="images/svg/to_top.svg"></a></button>
 
-            <h1>Broaden <br> Your Vision</h1>
+    <div class="content">
+        <section class="intro">
+            <div class="intro_content">
+                <h1>Broaden <br> Your Vision</h1>
 
-            <p>With us, every step you take is a step into the future. We are a leading company in Cybersecurity and
-                Network
-                Administration, trusted by partners in over 30 countries worldwide.</p>
+                <p>With us, every step you take is a step into the future. We are a leading company in Cybersecurity and
+                    Network
+                    Administration, trusted by partners in over 30 countries worldwide.</p>
 
-            <div class="buttons">
-                <button>Join Us
-
-                </button>
-                <button class="secondary">All Positions</button>
-
+                <div class="buttons">
+                    <button class="primary">Join Us</button>
+                    <button class="secondary">All Positions</button>
+                </div>
+            </div>
+            <div class="intro_img">
+                <img src="images/bulb.png" class="intro_img1">
+                <img src="images/shield.png" class="intro_img2">
+                <img src="images/explorer.png" class="intro_img3">
+                <img src="images/lab.png" class="intro_img4">
             </div>
         </section>
         <section>
@@ -56,12 +62,12 @@
                     <img src="images/company1.jpg">
                     <div class="card_content">
                         <h3>Alex Dang</h3>
-                        <h5>Founder & CEO</h5>
+                        <h3>Founder & CEO</h3>
                         <p>"We don't just build networks; we build trust, every connection is an opportunity."</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/company1.jpg">
+                    <img src="images/company2.jpg">
                     <div class="card_content">
                         <h3>Alex Dang</h3>
                         <h5>Founder & CEO</h5>
@@ -69,7 +75,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/company1.jpg">
+                    <img src="images/company3.jpg">
                     <div class="card_content">
                         <h3>Alex Dang</h3>
                         <h5>Founder & CEO</h5>
@@ -89,33 +95,35 @@
         <section class="vision">
             <div class="vision_title">
                 <h1>The "Vision" <br> Of Our Own</h1>
-                <h4>We see a future where technology connects people seamlessly and with absolute security. It’s a grand
+                <p>We see a future where technology connects people seamlessly and with absolute security. It’s a grand
                     picture, and these
-                    are the pieces we are building every day.</h4>
+                    are the pieces we are building every day.</p>
             </div>
-            <div class="vision_content">
-                <div class="vision_column">
-                    <h1 class="number">1</h1>
-                    <div>
+            <div class="vision_background">
+                <div class="vision_content">
+                    <div class="vision_column">
+                        <div class="number">
+                            <h1>1</h1>
+                        </div>
                         <h2>To engineer a seamless world.</h2>
                         <p>Our goal is a future where every connection, from enterprise to individual, is guaranteed
                             to
                             be fast, stable, and
                             uninterrupted. A world where technology truly flows.</p>
                     </div>
-                </div>
-                <div class="vision_column">
-                    <h1 class="number">2</h1>
-                    <div>
+                    <div class="vision_column">
+                        <div class="number">
+                            <h1>2</h1>
+                        </div>
                         <h2>To enhance cybersecurity.</h2>
                         <p>By leveraging AI and breakthrough technologies, Netvision aims to redefine the standard
                             of online safety, making peace
                             of mind the default.</p>
                     </div>
-                </div>
-                <div class="vision_column">
-                    <h1 class="number">3</h1>
-                    <div>
+                    <div class="vision_column">
+                        <div class="number">
+                            <h1>3</h1>
+                        </div>
                         <h2>To Empower Global Growth.</h2>
                         <p>We believe a solid network infrastructure is the foundation for every great idea. Our
                             vision is to be the trusted
@@ -125,12 +133,12 @@
                 </div>
             </div>
         </section>
-    </nav>
+    </div>
 
 
     <footer>
         <p><a href="#">netvision@gmail.com</a></p>
-        <p>group2jiralink.com</p>
+        <p><a href="#">group2jiralink.com</a></p>
     </footer>
 </body>
 
