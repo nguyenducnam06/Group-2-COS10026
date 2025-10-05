@@ -23,6 +23,13 @@ nav li a {
 h2 {
   font-size: 36px;
 }
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+
 header {
   z-index: 10;
   position: sticky;
