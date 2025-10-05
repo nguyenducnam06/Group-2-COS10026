@@ -1,0 +1,55 @@
+.about_page {
+     display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 36px;
+    background: linear-gradient(
+    75deg,
+    rgba(145, 86, 241, 0.2),
+    rgba(212, 163, 226, 0.2)
+  );
+  padding: 48px;
+  border-radius: 48px;
+  }
+  .about_page article {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center; 
+height: 100%;            
+}
+.group-info {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 32px;
+  background: linear-gradient(
+    75deg,
+    rgba(145, 86, 241, 0.15),
+    rgba(212, 163, 226, 0.15)
+  );
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.group-info h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(145, 86, 241, 0.6); 
+  padding-bottom: 6px;
+}
+
+.info-box {
+  background: rgba(145, 86, 241, 0.1); 
+  padding: 14px 20px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.info-box p {
+ font-size: 16px;
+  color: #222;
+}
+
+.info-box ul {
+  margin: 8px 0 0 20px;
+  padding: 0;
+}
