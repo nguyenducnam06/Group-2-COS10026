@@ -20,14 +20,17 @@ nav li a {
     Calibri, "Trebuchet MS", sans-serif, sans-serif;
 }
 
+h1 {
+  font-size: 44px;
+}
 h2 {
   font-size: 36px;
 }
 h3 {
-  font-size: 28px;
-}
-h4 {
   font-size: 24px;
+}
+.vision_column > h2 {
+  color: #c6e7a3;
 }
 
 header {
