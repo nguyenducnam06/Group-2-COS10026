@@ -1,11 +1,156 @@
+<!-- Person In Charge: Do Trung Son
+ Student ID: 103803451 -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job apply</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/apply.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    
+
+<body id="top">
+    <header>
+        <h2>NetVision</h2>
+        <nav>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Job Description</a></li>
+            <li><a href="#">Apply</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </nav>
+        <h5>Contact</h5>
+    </header>
+
+    <h1 class="applytitle">Join us</h1>
+    <p class="applysubtitle">Take the first step and apply today - we'd love to have you on board !</p>
+
+    <form id="applicationForm" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+        <h3 class="formtitle">Application form</h3>
+        <p class="formtitle">fill out the form - be a part of our team !</p>
+        <!-- Job reference number -->
+        <legend for="jobRef">Job reference number:</legend>
+        <select id="jobRef" name="jobRef" required>
+            <option value="">-- Select job reference --</option>
+            <option value="Software Developer">NV01 - Software Developer</option>
+            <option value="Network Administrator">NV02 - Network Administrator</option>
+            <option value="Data Analyst">NV03 - Data Analyst</option>
+            <option value="Cybersecurity Specialist">NV04 - Cybersecurity Specialist</option>
+            <option value="IT Support Technician">NV05 - IT Support Technician</option>
+            <option value="Cloud Engineer">NV06 - Cloud Engineer</option>
+            <option value="AI/ML Engineer">NV07 - AI/ML Engineer</option>
+            <option value="Data Scientist">NV08 - Data Scientist</option>
+            <option value="Data Engineer">NV09 - Data Engineer</option>
+        </select>
+        <br><br>
+
+        <!-- First name -->
+        <legend for="firstName">First name:</legend>
+        <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
+            title="Please enter your first name" required>
+        <br><br>
+
+        <!-- Last name -->
+        <legend for="lastName">Last name:</legend>
+        <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
+            title="Please enter your last name" required>
+        <br><br>
+
+        <!-- Date of birth -->
+        <p>
+            <legend for="dob">Date of Birth:</legend>
+            <input type="date" name="dob" id="dob" required>
+        </p>
+        <br><br>
+
+        <!-- Gender -->
+        <fieldset>
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+        </fieldset>
+        <br>
+
+        <!-- Street Address -->
+        <legend for="street">Street Address:</legend>
+        <input type="text" id="street" name="street" maxlength="40" title="Please enter your street address" required>
+        <br><br>
+
+        <!-- Suburb/Town -->
+        <legend for="suburb">Suburb/Town:</legend>
+        <input type="text" id="suburb" name="suburb" maxlength="40" title="Please enter your suburb or town" required>
+        <br><br>
+
+        <!-- State -->
+        <legend for="state">State:</legend>
+        <select id="state" name="state" required>
+            <option value="">-- Select state --</option>
+            <option value="VIC">VIC</option>
+            <option value="NSW">NSW</option>
+            <option value="QLD">QLD</option>
+            <option value="NT">NT</option>
+            <option value="WA">WA</option>
+            <option value="SA">SA</option>
+            <option value="TAS">TAS</option>
+            <option value="ACT">ACT</option>
+        </select>
+        <br><br>
+
+        <!-- Postcode -->
+        <legend for="postcode">Postcode:</legend>
+        <input type="text" id="postcode" name="postcode" pattern="\d{4}" maxlength="4" title="please enter your 4-digit postcode"
+            required>
+        <br><br>
+
+        <!-- Email -->
+        <legend for="email">Email address:</legend>
+        <input id="emailapply" type="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email address" required>
+        <br><br>
+
+        <!-- Phone number -->
+        <legend for="phone">Phone number:</legend>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" title="Please enter your phone number" required>
+        <br><br>
+
+        <!-- Required technical skills -->
+        <fieldset>
+            <label>Required technical skills</label>
+            <input type="checkbox" id="skill1" name="skills" value="Skill A" required>
+            <label for="skill1">Skill A</label>
+
+            <input type="checkbox" id="skill2" name="skills" value="Skill B">
+            <label for="skill2">Skill B</label>
+
+            <input type="checkbox" id="skill3" name="skills" value="Skill C">
+            <label for="skill3">Skill C</label>
+        </fieldset>
+        <br>
+
+        <!-- Other skills -->
+        <legend for="otherSkills">Other skills:</legend><br>
+        <textarea id="otherSkills" name="otherSkills" rows="4" cols="40"
+            placeholder="Describe other skills..."></textarea>
+        <br><br>
+
+        <button type="submit" value="Submit Application">
+            Submit Application
+        </button>
+    </form>
 </body>
+
 </html>
