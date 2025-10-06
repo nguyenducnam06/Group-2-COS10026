@@ -2,10 +2,10 @@
 
 /* Styling for top section */
 .jobs_intro {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 36px;
-    background: linear-gradient(
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 36px;
+  background: linear-gradient(
     75deg,
     rgba(145, 86, 241, 0.2),
     rgba(212, 163, 226, 0.2)
@@ -14,70 +14,70 @@
   border-radius: 48px;
 }
 .jobs_intro img {
-    width: 90%;
-    height: auto;
-    margin: auto;
+  width: 90%;
+  height: auto;
+  margin: auto;
 }
-.jobs_intro button{
-    margin: auto;
-    margin-top: 24px;
+.jobs_intro button {
+  margin: auto;
+  margin-top: 24px;
 }
 .jobs_page h2 {
-    margin-left: 24px;
-    margin-top: 48px;
-    text-align: center;
+  margin-left: 24px;
+  margin-top: 48px;
+  text-align: center;
 }
 
 /* Styling for job list in short form */
 
 .job_list {
-    margin-top: 48px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 .job_card {
-    position: relative;
-    border: 1px solid #ece9e7;
-    box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
-    border-radius: 24px;
-    overflow: hidden;
-    background: linear-gradient(
-      180deg,
-      rgba(145, 86, 241, 0.5),
-      rgba(212, 163, 226, 0.5)
-    );
-    backdrop-filter: blur(12px);
-    padding: 24px;
-    padding-left: 5%;
-    flex: 1;
-    min-width: 300px;
-    flex-shrink: 1
+  position: relative;
+  border: 1px solid #ece9e7;
+  box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(145, 86, 241, 0.5),
+    rgba(212, 163, 226, 0.5)
+  );
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  padding-left: 5%;
+  flex: 1;
+  min-width: 300px;
+  flex-shrink: 1;
 }
 .job_card .title {
-    position: relative;
+  position: relative;
 
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 .job_card img {
-    width: 90%;
-    height: auto;
+  width: 90%;
+  height: auto;
 }
 .job_card h4 {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: inline-block;
 }
 .job_card p {
-    font-size: 18px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    font-style: italic;
-    display: inline-block;
+  font-size: 18px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-style: italic;
+  display: inline-block;
 }
 .job_card li {
-    font-size: 18px;
-    margin-bottom: 6px;
+  font-size: 18px;
+  margin-bottom: 6px;
 }
