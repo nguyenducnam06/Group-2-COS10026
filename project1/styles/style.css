@@ -172,7 +172,6 @@ button.secondary:hover {
 button:hover,
 .number:hover,
 .card:hover,
-.single:hover,
 a:hover {
   transform: scale(1.1);
 }
@@ -204,14 +203,6 @@ a:hover {
   gap: 12px;
   flex-wrap: wrap;
   justify-content: flex-start;
-}
-
-.single {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
 }
 
 .card {

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job apply</title>
+    <title>NetVision - Apply</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/apply.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,133 +18,134 @@
         rel="stylesheet">
 </head>
 
-<body id="top">
+<body>
     <header>
-        <h2>NetVision</h2>
+        <h3>NetVision</h3>
         <nav>
             <li><a href="index.html">Home</a></li>
             <li><a href="jobs.html">Job Description</a></li>
             <li><a href="#">Apply</a></li>
             <li><a href="about.html">About Us</a></li>
         </nav>
-        <h5>Contact</h5>
+        <li><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></li>
     </header>
 
-    <h1 class="applytitle">Join us</h1>
-    <p class="applysubtitle">Take the first step and apply today, we'd love to have you on board!</p>
-
-    <form id="applicationForm" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
-        <h3 class="formtitle">Application form</h3>
-        <p class="formtitle">Fill out the form - Be a part of our team!</p>
-        <!-- Job reference number -->
-        <legend for="jobRef">Job reference number:</legend>
-        <select id="jobRef" name="jobRef" required>
-            <option value="">-- Select job reference --</option>
-            <option value="Software Developer">NV01 - Software Developer</option>
-            <option value="Network Administrator">NV02 - Network Administrator</option>
-            <option value="Data Analyst">NV03 - Data Analyst</option>
-            <option value="Cybersecurity Specialist">NV04 - Cybersecurity Specialist</option>
-            <option value="IT Support Technician">NV05 - IT Support Technician</option>
-            <option value="Cloud Engineer">NV06 - Cloud Engineer</option>
-            <option value="AI/ML Engineer">NV07 - AI/ML Engineer</option>
-            <option value="Data Scientist">NV08 - Data Scientist</option>
-            <option value="Data Engineer">NV09 - Data Engineer</option>
-        </select>
-        <br><br>
-
-        <!-- First name and Last name -->
-        <div id="name">
-            <div class="textbox">
-                <legend for="firstName">First name:</legend>
-                <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
-                    title="Please enter your first name" required>
-            </div>
-            <div class="textbox">
-                <legend for="lastName">Last name:</legend>
-                <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
-                    title="Please enter your last name" required>
-            </div>
+    <div class="content">
+        <div class="center_aligned">
+            <h1>Join Us</h1>
+            <p>Take the first step and apply today, we'd love to have you on board!</p>
         </div>
-        <br><br>
 
-        <!-- Date of birth and Gender -->
-        <div id="dobgender">
-            <div id="dob">
-                <legend for="dob">Date of Birth:</legend>
-                <input type="date" name="dob" id="dob" style="width: 100%;" required>
+        <form id="applicationForm" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+            <div class="left_aligned">
+                <h3 class="formtitle">Application form</h3>
+                <p class="formtitle">Fill out the form - Be a part of our team!</p>
             </div>
-            <div id="gender">
-                <fieldset>
-                    <legend>Gender</legend>
-                    <label>
-                        <input type="radio" id="male" name="gender" value="Male" required> Male
-                    </label>
-                    <label>
-                        <input type="radio" id="female" name="gender" value="Female"> Female
-                    </label>
-                    <label>
-                        <input type="radio" id="other" name="gender" value="Other"> Other
-                    </label>
-                </fieldset>
+            <!-- Job reference number -->
+            <legend for="jobRef">Job reference number:</legend>
+            <select id="jobRef" name="jobRef" required>
+                <option value="">Select job reference</option>
+                <option value="Software Developer">NV01 - Software Developer</option>
+                <option value="Network Administrator">NV02 - Network Administrator</option>
+                <option value="Data Analyst">NV03 - Data Analyst</option>
+                <option value="Cybersecurity Specialist">NV04 - Cybersecurity Specialist</option>
+                <option value="IT Support Technician">NV05 - IT Support Technician</option>
+                <option value="Cloud Engineer">NV06 - Cloud Engineer</option>
+                <option value="AI/ML Engineer">NV07 - AI/ML Engineer</option>
+                <option value="Data Scientist">NV08 - Data Scientist</option>
+                <option value="Data Engineer">NV09 - Data Engineer</option>
+            </select>
+            <br>
+            <!-- First name and Last name -->
+            <div id="name">
+                <div class="textbox">
+                    <legend for="firstName">First name:</legend>
+                    <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                        title="Please enter your first name" required>
+                </div>
+                <div class="textbox">
+                    <legend for="lastName">Last name:</legend>
+                    <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                        title="Please enter your last name" required>
+                </div>
+            </div><br>
+            <!-- Date of birth and Gender -->
+            <div id="dobgender">
+                <div id="dob">
+                    <legend for="dob">Date of Birth:</legend>
+                    <input type="date" name="dob" id="dob" style="width: 100%;" required>
+                </div>
+                <div id="gender">
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <label>
+                            <input type="radio" id="male" name="gender" value="Male" required> Male
+                        </label>
+                        <label>
+                            <input type="radio" id="female" name="gender" value="Female"> Female
+                        </label>
+                        <label>
+                            <input type="radio" id="other" name="gender" value="Other"> Other
+                        </label>
+                    </fieldset>
+                </div>
             </div>
-        </div>
-        <br><br>
+            <br><br>
 
-        <!-- Street and Suburb Address -->
-        <div id="location">
-            <div class="textbox">
-                <legend for="street">Street Address:</legend>
-                <input type="text" id="street" name="street" maxlength="40" title="Please enter your street address"
-                    required>
+            <!-- Street and Suburb Address -->
+            <div id="location">
+                <div class="textbox">
+                    <legend for="street">Street Address:</legend>
+                    <input type="text" id="street" name="street" maxlength="40" title="Please enter your street address"
+                        required>
+                </div>
+
+                <div class="textbox">
+                    <legend for="suburb">Suburb/Town:</legend>
+                    <input type="text" id="suburb" name="suburb" maxlength="40" title="Please enter your suburb or town"
+                        required>
+                </div>
             </div>
 
-            <div class="textbox">
-                <legend for="suburb">Suburb/Town:</legend>
-                <input type="text" id="suburb" name="suburb" maxlength="40" title="Please enter your suburb or town"
-                    required>
+            <!-- State and Postcode -->
+            <div id="address">
+                <div class="textbox">
+                    <legend for="state">State:</legend>
+                    <select id="state" name="state" required>
+                        <option value="">-- Select state --</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="NT">NT</option>
+                        <option value="WA">WA</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="ACT">ACT</option>
+                    </select>
+                </div>
+                <div class="textbox">
+                    <legend for="postcode">Postcode:</legend>
+                    <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}"
+                        title="Please enter your postcode" required>
+                </div>
             </div>
-        </div>
-        <br><br>
+            <br><br>
 
-        <!-- State and Postcode -->
-        <div id="address">
-            <div class="textbox">
-                <legend for="state">State:</legend>
-                <select id="state" name="state" required>
-                    <option value="">-- Select state --</option>
-                    <option value="VIC">VIC</option>
-                    <option value="NSW">NSW</option>
-                    <option value="QLD">QLD</option>
-                    <option value="NT">NT</option>
-                    <option value="WA">WA</option>
-                    <option value="SA">SA</option>
-                    <option value="TAS">TAS</option>
-                    <option value="ACT">ACT</option>
-                </select>
+            <!-- Email and phone number -->
+            <div id="contactinfo">
+                <div class="textbox">
+                    <legend for="email">Email address:</legend>
+                    <input id="emailapply" type="email" name="email"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                        title="Please enter a valid email address" required>
+                </div>
+                <div class="textbox">
+                    <legend for="phone">Phone number:</legend>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}"
+                        title="Please enter your phone number" required>
+                </div>
             </div>
-            <div class="textbox">
-                <legend for="postcode">Postcode:</legend>
-                <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" title="Please enter your postcode"
-                    required>
-            </div>
-        </div>
-        <br><br>
-
-        <!-- Email and phone number -->
-        <div id="contactinfo">
-            <div class="textbox">
-                <legend for="email">Email address:</legend>
-                <input id="emailapply" type="email" name="email"
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-                    title="Please enter a valid email address" required>
-            </div>
-            <div class="textbox">
-                <legend for="phone">Phone number:</legend>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" title="Please enter your phone number"
-                    required>
-            </div>
-        </div>
-        <br><br>
+            <br><br>
 
             <!-- Required technical skills -->
             <fieldset>
@@ -166,10 +167,56 @@
                 placeholder="Describe other skills..."></textarea>
             <br><br>
 
-        <button type="submit" value="Submit Application" class="primary">
-            Submit Application
-        </button>
-    </form>
+            <button type="submit" value="Submit Application" class="primary">
+                Submit Application
+            </button>
+        </form>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="left_aligned">
+                <h1>NetVision</h1>
+                <p>Connecting the world with secure, innovative network solutions.</p>
+            </div>
+            <div class="left_aligned">
+                <h3>Contact Us</h3>
+                <div class="row">
+                    <img src="images/svg/jira.svg" alt="Jira">
+                    <p><a href="https://group2cos10026.atlassian.net/jira/software/projects/SCRUM/boards/1"
+                            target="_blank">Our Jira
+                            board</a></p>
+                </div>
+                <div class="row">
+                    <img src="images/svg/mail.svg" alt="Mail">
+                    <p><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></p>
+                </div>
+                <div class="row">
+                    <img src="images/svg/phone.svg" alt="Phone">
+                    <p>+84 746 265 999</p>
+                </div>
+                <div class="row">
+                    <img src="images/svg/location.svg" alt="Location">
+                    <p><a href="https://maps.app.goo.gl/DdpmDrBmuNDem2KX7" target="_blank">80 Duy Tan, Hanoi,
+                            Vietnam</a>
+                    </p>
+                </div>
+            </div>
+            <div class="left_aligned">
+                <h3>Follow Us</h3>
+
+                <div class="row">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="images/svg/facebook.svg"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="images/svg/instagram.svg"
+                            alt="Instagram"></a>
+                    <a href="https://www.x.com/" target="_blank"><img src="images/svg/twitter.svg" alt="Twitter"></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><img src="images/svg/linkedin.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 
 </html>
