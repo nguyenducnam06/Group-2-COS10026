@@ -20,7 +20,7 @@ h4,
 h5,
 button,
 button a,
-nav li a {
+li a {
   font-family: "Cal Sans", Tahoma, Geneva, Verdana, sans-serif, "Gill Sans MT",
     Calibri, "Trebuchet MS", sans-serif, sans-serif;
 }
@@ -34,6 +34,9 @@ h2 {
 }
 h3 {
   font-size: 24px;
+}
+h4 {
+  font-size: 20px;
 }
 h5 {
   font-size: 16px;
@@ -64,7 +67,7 @@ header {
 
 footer {
   background: linear-gradient(
-    180deg,
+    160deg,
     rgba(145, 86, 241, 0.5),
     rgba(32, 30, 75, 0.5)
   );
@@ -79,6 +82,18 @@ footer {
 
 section {
   margin-bottom: 48px;
+}
+
+.input_with_button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+}
+
+.input_with_button input {
+  flex: 1;
 }
 
 input,
@@ -113,7 +128,7 @@ a {
   background: none;
 }
 
-nav a:hover,
+li a:hover,
 footer a:hover {
   transition: all 0.3s ease;
   background: none;
@@ -126,6 +141,12 @@ button {
   cursor: pointer;
   backdrop-filter: blur(12px);
   font-size: large;
+}
+
+.button_row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 button.primary {
@@ -148,28 +169,41 @@ button.secondary:hover {
   box-shadow: 0px 0px 50px #c6e7a3a7;
 }
 
-.search_bar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  justify-content: center;
+button:hover,
+.number:hover,
+.card:hover,
+.single:hover,
+a:hover {
+  transform: scale(1.1);
 }
 
-#search {
-  flex-grow: 1;
-}
+.left_aligned,
+.right_aligned,
 .center_aligned {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  text-align: center;
+  max-width: 50vw;
   margin: 24px;
+  flex: 1;
 }
 
-.center_aligned p {
-  max-width: 50%;
-  margin: 0 auto;
+.right_aligned {
+  text-align: right;
+  margin-left: auto;
+}
+.center_aligned {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .single {
@@ -178,12 +212,6 @@ button.secondary:hover {
   align-items: center;
   justify-content: center;
   gap: 16px;
-}
-
-.buttons {
-  gap: 16px;
-  display: flex;
-  margin-top: 12px;
 }
 
 .card {
@@ -226,13 +254,6 @@ button.secondary:hover {
 .card_content img {
   height: 50%;
   width: 50%;
-}
-
-button:hover,
-.number:hover,
-.card:hover,
-.single:hover {
-  transform: scale(1.1);
 }
 
 .number {
