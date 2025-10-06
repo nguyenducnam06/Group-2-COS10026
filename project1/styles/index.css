@@ -111,17 +111,6 @@
   flex-wrap: wrap;
 }
 
-.content_background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(50deg, #943edb66, #c6e7a352);
-  border: 1px solid #ece9e7;
-  border-radius: 30px;
-  width: fit-content;
-  padding: 8px 16px;
-}
-
 .timeline_content > h2 {
   box-shadow: 10px 10px 50px #9156f161, -10px 0px 50px #d4a3e298;
   background: linear-gradient(60deg, rgb(145, 86, 241), rgb(212, 163, 226));

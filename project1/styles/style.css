@@ -261,3 +261,14 @@ a:hover {
 .number h1 {
   font-size: 64px;
 }
+
+.content_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(50deg, #943edb66, #c6e7a352);
+  border: 1px solid #ece9e7;
+  border-radius: 30px;
+  width: fit-content;
+  padding: 8px 16px;
+}
