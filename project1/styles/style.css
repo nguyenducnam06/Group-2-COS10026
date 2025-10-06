@@ -172,8 +172,9 @@ button.secondary:hover {
 button:hover,
 .number:hover,
 .card:hover,
-a:hover {
-  transform: scale(1.1);
+a:hover,
+.content_background:hover {
+  transform: scale(1.05);
 }
 
 .left_aligned,
@@ -183,13 +184,14 @@ a:hover {
   flex-direction: column;
   gap: 12px;
   max-width: 50vw;
-  margin: 24px;
+  padding: 24px 32px;
   flex: 1;
 }
 
 .right_aligned {
   text-align: right;
   margin-left: auto;
+  align-items: flex-end;
 }
 .center_aligned {
   text-align: center;
@@ -270,5 +272,5 @@ a:hover {
   border: 1px solid #ece9e7;
   border-radius: 30px;
   width: fit-content;
-  padding: 8px 16px;
+  box-shadow: 0px 12px 100px #090310ad;
 }
