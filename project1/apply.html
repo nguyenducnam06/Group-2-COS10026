@@ -52,104 +52,123 @@
         </select>
         <br><br>
 
-        <!-- First name -->
-        <legend for="firstName">First name:</legend>
-        <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
-            title="Please enter your first name" required>
+        <!-- First name and Last name -->
+        <div id="name">
+            <div class="textbox">
+                <legend for="firstName">First name:</legend>
+                <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                    title="Please enter your first name" required>
+            </div>
+            <div class="textbox">
+                <legend for="lastName">Last name:</legend>
+                <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                    title="Please enter your last name" required>
+            </div>
+        </div>
         <br><br>
 
-        <!-- Last name -->
-        <legend for="lastName">Last name:</legend>
-        <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
-            title="Please enter your last name" required>
+        <!-- Date of birth and Gender -->
+        <div id="dobgender">
+            <div id="dob">
+                <legend for="dob">Date of Birth:</legend>
+                <input type="date" name="dob" id="dob" style="width: 100%;" required>
+            </div>
+            <div id="gender">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label>
+                        <input type="radio" id="male" name="gender" value="Male" required> Male
+                    </label>
+                    <label>
+                        <input type="radio" id="female" name="gender" value="Female"> Female
+                    </label>
+                    <label>
+                        <input type="radio" id="other" name="gender" value="Other"> Other
+                    </label>
+                </fieldset>
+            </div>
+        </div>
         <br><br>
 
-        <!-- Date of birth -->
-        <p>
-            <legend for="dob">Date of Birth:</legend>
-            <input type="date" name="dob" id="dob" required>
-        </p>
+        <!-- Street and Suburb Address -->
+        <div id="location">
+            <div class="textbox">
+                <legend for="street">Street Address:</legend>
+                <input type="text" id="street" name="street" maxlength="40" title="Please enter your street address"
+                    required>
+            </div>
+
+            <div class="textbox">
+                <legend for="suburb">Suburb/Town:</legend>
+                <input type="text" id="suburb" name="suburb" maxlength="40" title="Please enter your suburb or town"
+                    required>
+            </div>
+        </div>
         <br><br>
 
-        <!-- Gender -->
-        <fieldset>
-            <label>Gender</label>
-            <input type="radio" id="male" name="gender" value="Male" required>
-            <label for="male">Male</label>
-
-            <input type="radio" id="female" name="gender" value="Female">
-            <label for="female">Female</label>
-
-            <input type="radio" id="other" name="gender" value="Other">
-            <label for="other">Other</label>
-        </fieldset>
-        <br>
-
-        <!-- Street Address -->
-        <legend for="street">Street Address:</legend>
-        <input type="text" id="street" name="street" maxlength="40" title="Please enter your street address" required>
+        <!-- State and Postcode -->
+        <div id="address">
+            <div class="textbox">
+                <legend for="state">State:</legend>
+                <select id="state" name="state" required>
+                    <option value="">-- Select state --</option>
+                    <option value="VIC">VIC</option>
+                    <option value="NSW">NSW</option>
+                    <option value="QLD">QLD</option>
+                    <option value="NT">NT</option>
+                    <option value="WA">WA</option>
+                    <option value="SA">SA</option>
+                    <option value="TAS">TAS</option>
+                    <option value="ACT">ACT</option>
+                </select>
+            </div>
+            <div class="textbox">
+                <legend for="postcode">Postcode:</legend>
+                <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" title="Please enter your postcode"
+                    required>
+            </div>
+        </div>
         <br><br>
 
-        <!-- Suburb/Town -->
-        <legend for="suburb">Suburb/Town:</legend>
-        <input type="text" id="suburb" name="suburb" maxlength="40" title="Please enter your suburb or town" required>
+        <!-- Email and phone number -->
+        <div id="contactinfo">
+            <div class="textbox">
+                <legend for="email">Email address:</legend>
+                <input id="emailapply" type="email" name="email"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                    title="Please enter a valid email address" required>
+            </div>
+            <div class="textbox">
+                <legend for="phone">Phone number:</legend>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" title="Please enter your phone number"
+                    required>
+            </div>
+        </div>
         <br><br>
 
-        <!-- State -->
-        <legend for="state">State:</legend>
-        <select id="state" name="state" required>
-            <option value="">-- Select state --</option>
-            <option value="VIC">VIC</option>
-            <option value="NSW">NSW</option>
-            <option value="QLD">QLD</option>
-            <option value="NT">NT</option>
-            <option value="WA">WA</option>
-            <option value="SA">SA</option>
-            <option value="TAS">TAS</option>
-            <option value="ACT">ACT</option>
-        </select>
-        <br><br>
+            <!-- Required technical skills -->
+            <fieldset>
+                <label>Required technical skills</label>
+                <input type="checkbox" id="skill1" name="skills" value="Skill A" required>
+                <label for="skill1">Skill A</label>
 
-        <!-- Postcode -->
-        <legend for="postcode">Postcode:</legend>
-        <input type="text" id="postcode" name="postcode" pattern="\d{4}" maxlength="4" title="please enter your 4-digit postcode"
-            required>
-        <br><br>
+                <input type="checkbox" id="skill2" name="skills" value="Skill B">
+                <label for="skill2">Skill B</label>
 
-        <!-- Email -->
-        <legend for="email">Email address:</legend>
-        <input id="emailapply" type="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-            title="Please enter a valid email address" required>
-        <br><br>
+                <input type="checkbox" id="skill3" name="skills" value="Skill C">
+                <label for="skill3">Skill C</label>
+            </fieldset>
+            <br>
 
-        <!-- Phone number -->
-        <legend for="phone">Phone number:</legend>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" title="Please enter your phone number" required>
-        <br><br>
+            <!-- Other skills -->
+            <legend for="otherSkills">Other skills:</legend><br>
+            <textarea id="otherSkills" name="otherSkills" rows="4" cols="40"
+                placeholder="Describe other skills..."></textarea>
+            <br><br>
 
-        <!-- Required technical skills -->
-        <fieldset>
-            <label>Required technical skills</label>
-            <input type="checkbox" id="skill1" name="skills" value="Skill A" required>
-            <label for="skill1">Skill A</label>
-
-            <input type="checkbox" id="skill2" name="skills" value="Skill B">
-            <label for="skill2">Skill B</label>
-
-            <input type="checkbox" id="skill3" name="skills" value="Skill C">
-            <label for="skill3">Skill C</label>
-        </fieldset>
-        <br>
-
-        <!-- Other skills -->
-        <legend for="otherSkills">Other skills:</legend><br>
-        <textarea id="otherSkills" name="otherSkills" rows="4" cols="40"
-            placeholder="Describe other skills..."></textarea>
-        <br><br>
-
-        <button type="submit" value="Submit Application">
-            Submit Application
-        </button>
+            <button type="submit" value="Submit Application">
+                Submit Application
+            </button>
     </form>
 </body>
 

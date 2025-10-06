@@ -29,7 +29,6 @@
 
 input,
 select {
-    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -87,7 +86,40 @@ button {
     border-radius: 50px;
     padding: 12px 24px;
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
     display: block;
     margin: 0 auto;
+}
+
+button:hover {
+    background: #c6e7a3;
+    color: #000000;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#name, #location, #address, #contactinfo {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#name, #location, #address, #contactinfo > * {
+    flex: 1;
+}
+
+#dobgender {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#dobgender > * {
+    flex: 1; 
+}
+
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
