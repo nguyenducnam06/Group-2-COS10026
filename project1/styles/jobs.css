@@ -158,7 +158,10 @@ hr.primary {
 hr.secondary{
  background-color: #ece9e7;
  height: 1px;
- width: 90%;
+ width: 100%;
+ margin-left: auto;
+ margin-right: auto;
+ display: block;
 }
 
 /* styling the aside of job details */
