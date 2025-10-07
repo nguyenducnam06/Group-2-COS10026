@@ -28,7 +28,6 @@
     max-width: 100%;
     margin-bottom: 12px;
   }
-  
 }
 .jobs_intro button {
   margin: auto;
@@ -44,6 +43,9 @@
 /* Styling for job list in short form */
 .job_card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border: 1px solid #ece9e7;
   box-shadow: 10px 10px 50px #9156f144, -10px 0px 50px #d4a3e244;
   border-radius: 24px;
@@ -101,6 +103,13 @@
   list-style-position: outside;
   padding-left: 12px;
   margin-left: 0;
+}
+.job_card button {
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
 }
 
 /* Styling for job details section */
