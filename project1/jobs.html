@@ -6,10 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Meta data information and stylesheet -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Description</title>
+    <meta name="description" content="NetVision - Job Description Page">
+    <meta name="keywords"
+        content="NetVision, Job Description, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
+    <meta name="author" content="Group 2 - COS10026">
+    <title>NetVision - Job Description</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/jobs.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,100 +27,330 @@
 </head>
 
 <body id="job">
+    <!-- Header and Navigation Bar -->
     <header>
         <h3>NetVision</h3>
         <nav>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Job Description</a></li>
-            <li><a href="apply.html">Apply</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#.html">Job Description</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </nav>
-        <li><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></li>
+        <ul>
+            <li><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></li>
+        </ul>
     </header>
 
-    <nav class="jobs_page">
-        <div class="container">
-            <section class="jobs_intro">
-                <img src="images/jobs.jpg" alt="job illustration source: freepik.com">
-                <article>
-                    <h1>Bring Your Vision<br>To Life</h1>
-                    <p>Explores your potentials <br>Find your desired career, bring your vision to life with
-                        NetVision.<br>Becoming a part of the leading network company. Apply now!</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Back to top button -->
+        <button id="back" class="secondary"><a href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a></button>
+        <!-- Top Section -->
+        <section class="jobs_intro content_background">
+            <img src="images/jobs.jpg" alt="job illustration source: freepik.com">
+            <article class="left_aligned">
+                <h1>Bring Your Vision<br>To Life</h1>
+                <p>Explores your potentials <br>Find your desired career, bring your vision to life with
+                    NetVision.<br>Becoming a part of the leading network company. Apply now!</p>
+                <div class="row">
                     <button class="primary"><a href="apply.html">Apply Now</a></button>
-                </article>
-            </section>
+                </div>
+            </article>
+        </section>
 
-            <h1 class="center_aligned">Your Available Opportunities</h1>
-            <section class="row">
-                <article class="job_card">
-                    <div class="title">
-                        <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                        <div>
-                            <h3>Junior Network Technician</h3>
-                            <p>Reference Number: JNT01</p>
-                        </div>
+        <!-- Job Listings -->
+        <h1 class="center_aligned">Your Available Opportunities</h1>
+        <section class="input_with_button">
+            <input type="text" name="search" id="search" placeholder="Search for jobs" />
+            <button class="primary">Search</button>
+        </section>
+        <section class="row">
+            <article class="job_card">
+                <div class="title">
+                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
+                    <div>
+                        <h3>Junior Network Technician</h3>
+                        <p>Reference Number: JNT01</p>
                     </div>
-                    <h4>$45,000 - $55,000 per annum</h4>
-                    <ul>
-                        <li>Location: Ha Noi, Vietnam</li>
-                        <li>Direct Supervisor: Senior Network Administrator</li>
-                        <li>Employment Type: Full-time</li>
-                        <li>Experience Level: Entry-level</li>
-                    </ul>
-                    <p>An entry-level role focused on the physical installation, configuration, and foundational
-                        maintenance of network hardware (routers, switches, firewalls) and cabling infrastructure.</p>
-                </article>
+                </div>
+                <h4>$45,000 - $55,000 per annum</h4>
+                <ul>
+                    <li>Location: Ha Noi, Vietnam</li>
+                    <li>Direct Supervisor: Senior Network Administrator</li>
+                    <li>Employment Type: Full-time</li>
+                    <li>Experience Level: Entry-level</li>
+                </ul>
+                <p>An entry-level role focused on the physical installation, configuration, and foundational
+                    maintenance of network hardware (routers, switches, firewalls) and cabling infrastructure.</p>
+                <button class="secondary"><a href="#job1">Explore</a></button>
+            </article>
 
-                <article class="job_card">
-                    <div class="title">
-                        <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                        <div>
-                            <h3>Intern Business Analysis</h3>
-                            <p>Reference Number: IBA02</p>
-                        </div>
-
+            <article class="job_card">
+                <div class="title">
+                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
+                    <div>
+                        <h3>Intern Business Analysis</h3>
+                        <p>Reference Number: IBA02</p>
                     </div>
-                    <h4>$40,000 - $50,000 per annum</h4>
-                    <ul>
-                        <li>Location: Ha Noi, Vietnam</li>
-                        <li>Direct Supervisor: Senior Business Analyst</li>
-                        <li>Employment Type: Internship</li>
-                        <li>Experience Level: Intern</li>
-                    </ul>
-                    <p>A structured 3-6 month internship designed to immerse the candidate in the process of gathering,
-                        documenting, and analyzing business requirements to support the development and deployment of IT
-                        solutions and services within the network administration context.</p>
-                </article>
 
-                <article class="job_card">
-                    <div class="title">
-                        <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                        <div>
-                            <h3>Intern Business Analysis</h3>
-                            <p>Reference Number: IBA02</p>
-                        </div>
+                </div>
+                <h4>$18 - $22 per hour</h4>
+                <ul>
+                    <li>Location: Ha Noi, Vietnam</li>
+                    <li>Direct Supervisor: Senior Business Analyst</li>
+                    <li>Employment Type: Internship</li>
+                    <li>Experience Level: Intern</li>
+                </ul>
+                <p>A 3-6 month internship designed to give experience in
+                    documenting analyzing business requirements to support IT
+                    solutions within the network administration context.</p>
+                <button class="secondary"><a href="#job2">Explore</a></button>
+            </article>
 
+            <article class="job_card">
+                <div class="title">
+                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
+                    <div>
+                        <h3>Telephone Sales Representative</h3>
+                        <p>Reference Number: TSL03</p>
                     </div>
-                    <h4>$40,000 - $50,000 per annum</h4>
-                    <ul>
-                        <li>Location: Ha Noi, Vietnam</li>
-                        <li>Direct Supervisor: Senior Business Analyst</li>
-                        <li>Employment Type: Internship</li>
-                        <li>Experience Level: Intern</li>
-                    </ul>
-                    <p>A structured 3-6 month internship designed to immerse the candidate in the process of gathering,
-                        documenting, and analyzing business requirements to support the development and deployment of IT
-                        solutions and services within the network administration context.</p>
+
+                </div>
+                <h4>$40,000 - $50,000 base</h4>
+                <ul>
+                    <li>Location: Ha Noi, Vietnam</li>
+                    <li>Direct Supervisor: Sales Manager</li>
+                    <li>Employment Type: Full-time</li>
+                    <li>Experience Level: Entry-level</li>
+                </ul>
+                <p>A sales role responsible for driving revenue growth by making outbound calls, responding to
+                    inbound inquiries, and selling our network administration services.</p>
+                <button class="secondary"><a href="#job3">Explore</a></button>
+            </article>
+        </section>
+        <hr class="primary">
+
+        <!-- Section 2: Jobs in Details -->
+        <section class="row">
+            <div class="job_details" id="job1">
+                <article class="content">
+                    <h2>Junior Network Technician</h2>
+                    <h5> JNT01</h5>
+                    <!-- Brief introduction -->
+                    <p> An entry-level role focused on the physical installation, configuration, and foundational
+                        maintenance of network hardware (routers, switches, firewalls) and cabling infrastructure.
+                        This role provides tier-1 support and assists senior team members in resolving network
+                        incidents and fulfilling service requests.</p>
+                    <h3>Key Responsibilities:</h3>
+                    <ol>
+                        <li>Perform hardware installation, racking, and stacking of new network devices (switches,
+                            access points, etc.).</li>
+                        <li>Execute and test network cable runs (Cat 6, fiber optics) and ensure proper patching and
+                            labelling.</li>
+                        <li>Monitor network performance and health using established monitoring tools, escalating
+                            anomalies to senior staff.</li>
+                        <li>Provide basic troubleshooting for connectivity issues, including TCP/IP configuration
+                            problems and physical layer faults.</li>
+                        <li>Maintain accurate inventory records of all network equipment and detailed documentation
+                            of network changes.</li>
+                        <li>Respond to and resolve Tier 1 network-related support tickets within defined service
+                            level agreements (SLAs).</li>
+                    </ol>
+                    <h3>Qualifications:</h3>
+                    <ol>
+                        <li>Essentials</li>
+                        <ul>
+                            <li>0-1 year of professional experience in an IT or technical support role.</li>
+                            <li>Basic understanding of networking fundamentals, including TCP/IP, DNS, and DHCP.
+                            </li>
+                            <li>Possesses or actively pursuing the CompTIA Network+ certification.</li>
+                            <li>Proven ability to troubleshoot hardware and software issues logically and
+                                efficiently.</li>
+                            <li>Strong physical dexterity for working with network cabling and equipment.</li>
+                        </ul>
+                        <li>Preferable</li>
+                        <ul>
+                            <li>Associate's degree in Information Technology or a related field.</li>
+                            <li>Experience working with a ticketing system (e.g., ServiceNow, Jira).</li>
+                            <li>Familiarity with basic command-line interface (CLI) configuration for Cisco or
+                                Juniper devices.</li>
+                        </ul>
+                    </ol>
                 </article>
-        </div>
-    </nav>
+
+                <!-- shortlisted benefits of the job -->
+                <aside class="left_aligned content_background">
+                    <h3>$45,000 - $55,000 per annum</h3>
+                    <div class="row">
+                        <img src="images/svg/location-green.svg" alt="Location">
+                        <p>Ha Noi</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/time.svg" alt="time">
+                        <p>Full-time</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/level.svg" alt="level">
+                        <p>Entry-level</p>
+                    </div>
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>Health, Dental, Vision Insurance</li>
+                        <li>Certification and Training Reimbursement</li>
+                        <li>Three weeks Paid Time Off (PTO)</li>
+                    </ul>
+                    <button class="primary"><a href="apply.html">Apply Now</a></button>
+                </aside>
+            </div>
+            <hr class="secondary">
+
+            <div class="job_details" id="job2">
+
+                <article class="content">
+                    <h2>Intern Business Analysis</h2>
+                    <h5>IBA02</h5>
+                    <!-- Brief introduction -->
+                    <p>A structured 3-6 month internship designed to immerse the candidate in the process of
+                        gathering, documenting, and analyzing business requirements to support the development and
+                        deployment of IT solutions and services within the network administration context.</p>
+                    <h3>Key Responsibilities:</h3>
+                    <ol>
+                        <li>Assist the Senior Business Analyst in conducting stakeholder interviews and requirements
+                            gathering workshops.</li>
+                        <li>Document current-state "as-is" and future-state "to-be" business processes using
+                            flowcharts and diagrams.</li>
+                        <li>Translate high-level business needs into detailed functional and non-functional
+                            requirements documents.</li>
+                        <li>Support the analysis of operational data to identify process gaps and opportunities for
+                            efficiency improvements.</li>
+                        <li>Participate in quality assurance (QA) testing to ensure delivered solutions meet
+                            specified requirements.</li>
+                    </ol>
+                    <h3>Qualifications:</h3>
+                    <ol>
+                        <li>Essentials</li>
+                        <ul>
+                            <li>Currently pursuing a Bachelor’s or Master’s degree in Business Administration,
+                                Information Systems, or Computer Science.</li>
+                            <li>Excellent written and verbal communication skills, including active listening and
+                                professional interviewing.</li>
+                            <li>Demonstrated analytical and problem-solving abilities.</li>
+                            <li>Proficiency in Microsoft Office Suite (Word, Excel, PowerPoint).</li>
+                        </ul>
+                        <li>Preferable</li>
+                        <ul>
+                            <li>Basic knowledge of SQL for data querying and analysis.</li>
+                            <li>Familiarity with standard business process modeling notation (BPMN).</li>
+                            <li>Experience with diagramming tools such as Microsoft Visio or Lucidchart.</li>
+                        </ul>
+                    </ol>
+                </article>
+
+                <!-- shortlisted benefits of the job -->
+                <aside class="left_aligned content_background">
+                    <h3>$18 - $22 per hour</h3>
+                    <div class="row">
+                        <img src="images/svg/location-green.svg" alt="Location">
+                        <p>Ha Noi</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/time.svg" alt="time">
+                        <p>Internship</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/level.svg" alt="level">
+                        <p>Intern</p>
+                    </div>
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>Mentorship from Experts</li>
+                        <li>Networking Opportunities</li>
+                        <li>Potential for Full-time Employment</li>
+                    </ul>
+                    <button class="primary"><a href="apply.html">Apply Now</a></button>
+                </aside>
+            </div>
+            <hr class="secondary">
+
+            <div class="job_details" id="job3">
+                <article class="content">
+                    <h2>Telephone Sales Representative</h2>
+                    <h5>TSL03</h5>
+                    <!-- Brief introduction -->
+                    <p>A sales role responsible for driving revenue growth by making outbound calls, responding to
+                        inbound inquiries, and selling our network administration services.</p>
+                    <h3>Key Responsibilities:</h3>
+                    <ol>
+                        <li>Conduct high-volume outbound calls (cold calling) to prospective clients to identify
+                            potential sales opportunities.</li>
+                        <li>Qualify leads effectively, determining the prospect’s needs, budget, and purchasing
+                            timeline.</li>
+                        <li>Clearly articulate the value proposition of the company’s network and IT support
+                            services to non-technical decision-makers.</li>
+                        <li>Manage and maintain a sales pipeline using the company's Customer Relationship
+                            Management (CRM) system.</li>
+                        <li>Consistently achieve monthly and quarterly sales targets and key performance indicators
+                            (KPIs).</li>
+                    </ol>
+                    <h3>Qualifications:</h3>
+                    <ol>
+                        <li>Essentials</li>
+                        <ul>
+                            <li>1+ years of proven success in a high-volume telesales, telemarketing, or lead
+                                generation role.</li>
+                            <li>Exceptional verbal communication and negotiation skills, with a confident telephone
+                                presence.</li>
+                            <li>Resilience and persistence in handling objections and rejection.</li>
+                            <li>Proficiency in using CRM software for tracking sales activities and managing
+                                contacts.</li>
+                        </ul>
+                        <li>Preferable</li>
+                        <ul>
+                            <li>Experience selling technical products or B2B IT/Managed Services.</li>
+                            <li>Familiarity with basic networking terminology (e.g., Wi-Fi, VPN, firewall).</li>
+                        </ul>
+                    </ol>
+                </article>
+
+                <!-- shortlisted benefits of the job -->
+                <aside class="left_aligned content_background">
+                    <h3>$40,000 - $50,000 base <br> + commission</h3>
+                    <div class="row">
+                        <img src="images/svg/location-green.svg" alt="Location">
+                        <p>Ha Noi</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/time.svg" alt="time">
+                        <p>Full-time</p>
+                    </div>
+                    <div class="row">
+                        <img src="images/svg/level.svg" alt="level">
+                        <p>Entry-level</p>
+                    </div>
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>Base Salary + Commission Structure</li>
+                        <li>Health Insurance Package</li>
+                        <li>Training and Development Programs</li>
+                        <li>Opportunities for Career Advancement</li>
+                    </ul>
+                    <button class="primary"><a href="apply.html">Apply Now</a></button>
+                </aside>
+            </div>
+            <hr class="secondary">
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="row">
-            <div class="left_aligned">
+            <aside class="left_aligned">
                 <h1>NetVision</h1>
                 <p>Connecting the world with secure, innovative network solutions.</p>
-            </div>
-            <div class="left_aligned">
+            </aside>
+            <aside class="left_aligned">
                 <h3>Contact Us</h3>
                 <div class="row">
                     <img src="images/svg/jira.svg" alt="Jira">
@@ -136,10 +372,9 @@
                             Vietnam</a>
                     </p>
                 </div>
-            </div>
-            <div class="left_aligned">
+            </aside>
+            <aside class="left_aligned">
                 <h3>Follow Us</h3>
-
                 <div class="row">
                     <a href="https://www.facebook.com/" target="_blank"><img src="images/svg/facebook.svg"
                             alt="Facebook"></a>
@@ -149,7 +384,7 @@
                     <a href="https://www.linkedin.com/" target="_blank"><img src="images/svg/linkedin.svg"
                             alt="LinkedIn"></a>
                 </div>
-            </div>
+            </aside>
         </div>
     </footer>
 </body>

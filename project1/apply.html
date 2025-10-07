@@ -7,6 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NetVision - Job Application Page">
+    <meta name="keywords" content="NetVision, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
+    <meta name="author" content="Group 2 - COS10026">
     <title>NetVision - Apply</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/apply.css">
@@ -22,15 +25,19 @@
     <header>
         <h3>NetVision</h3>
         <nav>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Job Description</a></li>
-            <li><a href="#">Apply</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="jobs.html">Job Description</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </nav>
-        <li><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></li>
+        <ul>
+            <li><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></li>
+        </ul>
     </header>
 
-    <div class="content">
+    <main>
         <div class="center_aligned">
             <h1>Join Us</h1>
             <p>Take the first step and apply today, we'd love to have you on board!</p>
@@ -45,15 +52,9 @@
             <legend for="jobRef">Job reference number:</legend>
             <select id="jobRef" name="jobRef" required>
                 <option value="">Select job reference</option>
-                <option value="Software Developer">NV01 - Software Developer</option>
-                <option value="Network Administrator">NV02 - Network Administrator</option>
-                <option value="Data Analyst">NV03 - Data Analyst</option>
-                <option value="Cybersecurity Specialist">NV04 - Cybersecurity Specialist</option>
-                <option value="IT Support Technician">NV05 - IT Support Technician</option>
-                <option value="Cloud Engineer">NV06 - Cloud Engineer</option>
-                <option value="AI/ML Engineer">NV07 - AI/ML Engineer</option>
-                <option value="Data Scientist">NV08 - Data Scientist</option>
-                <option value="Data Engineer">NV09 - Data Engineer</option>
+                <option value="JNT01">JNT01 - Junior Network Technician </option>
+                <option value="IBA02">IBA02 - Intern Business Analysis</option>
+                <option value="TSL03">TSL03 - Telephone Sales Representative</option>
             </select>
             <br>
             <!-- First name and Last name -->
@@ -171,14 +172,15 @@
                 Submit Application
             </button>
         </form>
-    </div>
+        </div>
+    </main>
     <footer>
         <div class="row">
-            <div class="left_aligned">
+            <aside class="left_aligned">
                 <h1>NetVision</h1>
                 <p>Connecting the world with secure, innovative network solutions.</p>
-            </div>
-            <div class="left_aligned">
+            </aside>
+            <aside class="left_aligned">
                 <h3>Contact Us</h3>
                 <div class="row">
                     <img src="images/svg/jira.svg" alt="Jira">
@@ -200,10 +202,9 @@
                             Vietnam</a>
                     </p>
                 </div>
-            </div>
-            <div class="left_aligned">
+            </aside>
+            <aside class="left_aligned">
                 <h3>Follow Us</h3>
-
                 <div class="row">
                     <a href="https://www.facebook.com/" target="_blank"><img src="images/svg/facebook.svg"
                             alt="Facebook"></a>
@@ -213,7 +214,7 @@
                     <a href="https://www.linkedin.com/" target="_blank"><img src="images/svg/linkedin.svg"
                             alt="LinkedIn"></a>
                 </div>
-            </div>
+            </aside>
         </div>
     </footer>
 </body>
