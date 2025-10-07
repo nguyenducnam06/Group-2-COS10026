@@ -75,7 +75,7 @@ footer {
   border-top: 1px solid #ece9e7;
 }
 
-.container {
+main {
   margin: 48px;
   margin-top: 24px;
 }
@@ -172,8 +172,7 @@ button.secondary:hover {
 button:hover,
 .number:hover,
 .card:hover,
-a:hover,
-.content_background:hover {
+a:hover {
   transform: scale(1.05);
 }
 
@@ -266,13 +265,13 @@ a:hover,
 
 .content_background {
   display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(50deg, #943edb66, #c6e7a352);
   border: 1px solid #ece9e7;
   border-radius: 30px;
   width: fit-content;
+  height: fit-content;
   box-shadow: 0px 12px 100px #090310ad;
+  align-items: flex-start;
 }
 
 #back {

@@ -4,36 +4,34 @@
 .jobs_intro {
   display: flex;
   flex-direction: row;
-  gap: 36px;
-  background: linear-gradient(
-    75deg,
-    rgba(145, 86, 241, 0.2),
-    rgba(212, 163, 226, 0.2)
-  );
+  gap: 24px;
   padding: 48px;
   border-radius: 48px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  margin-left: -48px;
+  border-left: none;
 }
 .jobs_intro img {
   position: relative;
   max-width: 50%;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: auto;
+  object-fit: cover;
+  flex: 1;
+  border-radius: 20px;
 }
 @media (max-width: 768px) {
   .jobs_intro {
     flex-direction: column;
+    align-items: flex-start;
   }
   .jobs_intro img {
     max-width: 100%;
-    margin-bottom: 12px;
   }
 }
-.jobs_intro button {
-  margin: auto;
-  margin-top: 24px;
-}
-.jobs_intro article{
+.jobs_intro article {
   position: relative;
   flex: 1;
   min-width: 250px;
@@ -81,7 +79,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  color:#c6e7a3;
+  color: #c6e7a3;
   text-align: center;
 }
 .job_card p {
@@ -104,78 +102,62 @@
   padding-left: 12px;
   margin-left: 0;
 }
-.job_card button {
-  display: block;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 12px;
-}
 
 /* Styling for job details section */
 .job_details {
-  margin-top: 36px;
+  margin-top: 24px;
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   padding: 24px;
   scroll-margin-top: 80px;
   gap: 12px;
 }
-.job_details ol{
+.job_details ol {
   list-style-type: decimal;
   list-style-position: outside;
   padding-left: 6px;
   margin-left: 12px;
 }
-.job_details li{
+.job_details li {
   display: list-item;
   padding: 6px;
   font-size: 18px;
 }
-.job_details ul{
+.job_details ul {
   list-style-type: disc;
   list-style-position: outside;
   padding-left: 24px;
   margin-left: 12px;
 }
-.job_details ul li{
+.job_details ul li {
   font-style: italic;
 }
-.job_details h3{
+.job_details > article h3 {
   margin-left: 12px;
 }
-.job_details p{
+.job_details > article p {
   margin: 12px;
 }
 
 /* Style horizontal line */
 hr.primary {
   border: none;
-  color: #c6e7a3;
-  background: linear-gradient(100deg, #ece9e7, #c6e7a3);
+  background: linear-gradient(100deg, transparent, #c6e7a3, transparent);
   height: 5px;
 }
-hr.secondary{
- background-color: #ece9e7;
- height: 1px;
- width: 100%;
- margin-left: auto;
- margin-right: auto;
- display: block;
+hr.secondary {
+  background-color: #ece9e7;
+  height: 1px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-/* styling the aside of job details */
-.job_details aside{
-  background: linear-gradient(50deg, #943edb66, #c6e7a352);
-  border: 1px solid #ece9e7;
-  border-radius: 30px;
-  padding: 24px;
-  box-shadow: 10px 10px 50px #9156f144;
-  align-self: start;
-}
+/* styling the buttons */
 
-.job_details aside button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.job_details aside button,
+.job_card button {
+  width: 100%;
+  margin-top: 12px;
 }
