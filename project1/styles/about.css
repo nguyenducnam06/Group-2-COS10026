@@ -122,9 +122,6 @@
 }
 .task {
   counter-reset: member;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 2rem 3rem; 
   max-width: 1200px;
   margin: 3rem auto;
   padding: 3rem 2rem;
@@ -140,6 +137,11 @@
   font-weight: 700;
   margin-bottom: 25px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 .contribution {
   counter-increment: member;
