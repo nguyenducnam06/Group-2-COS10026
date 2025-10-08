@@ -12,6 +12,12 @@
   font-size: 1.2rem;
 }
 
+.formtitle {
+  text-align: center;
+  color: #ece9e7;
+  margin-bottom: 12px;
+}
+
 #applicationForm {
   width: 80vw;
   margin: 0 auto;
@@ -26,11 +32,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* #jobRef {
+
+
+#jobRef {
   color: #ece9e7;
   background: linear-gradient(140deg, #b356f152, #c6e7a32d);
   width: 100%;
-} */
+  margin-bottom: 15px;
+} 
 
 #jobRef option {
   color: #ece9e7;
@@ -51,7 +60,6 @@ fieldset {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px;
-  margin-bottom: 15px;
 }
 
 textarea {
