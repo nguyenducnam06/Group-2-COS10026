@@ -57,15 +57,7 @@
   flex-direction: column;
   align-items: center;
 }
-.group-info h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.group-info .info-box {
+.info-box {
   display: flex;
   justify-content: space-around;
   gap: 30px;
@@ -122,14 +114,6 @@
   border-radius: 20px;
   background: linear-gradient(135deg, #1b1330, #3a2c65); 
   color: #fff;
-}
-.task h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .contribution-grid {
   display: grid;
@@ -190,3 +174,83 @@
     grid-template-columns: 1fr;
   }
   }
+.interests {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  background: inherit;
+}
+.interest-table {
+  background: rgba(255,255,255,0.02);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+.interest-table:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+th, td {
+  padding: 18px 22px;
+  border: 1px solid rgba(255,255,255,0.15);
+  text-align: left;
+}
+th {
+  background: linear-gradient(135deg, #9b5cf6, #6a11cb);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+td {
+  color: #eee;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+tr:hover { background: rgba(255,255,255,0.07); }
+.member-name {
+  font-weight: 700;
+  color: #c8fcb3;
+  font-size: 1.2rem;
+}
+.hobby-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #9b5cf6, #6a11cb);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  margin: 2px 4px 2px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.hobby-tag:hover { 
+  transform: scale(1.05); 
+}
+@media (max-width: 768px){
+  .interests {
+    margin:1rem;
+    padding: 2rem 1rem;
+  }
+  .interest-table { 
+    padding: 1rem; 
+  }
+  th, td { 
+    padding: 10px 12px; 
+  }
+  .interests h2 { 
+    font-size: 1.5rem; 
+  }
+  .hobby-tag {
+     font-size: 0.8em; 
+     padding: 4px;
+  }
+}
