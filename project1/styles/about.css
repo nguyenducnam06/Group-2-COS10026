@@ -10,7 +10,6 @@
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
-
 .about_page img {
   width: 300px;
   height: 300px;
@@ -20,14 +19,6 @@
   transition: transform 0.3s ease;
 }
 .about_page img:hover { transform: scale(1.05) rotate(2deg); }
-
-
-.about_page article { flex: 1; color: white; }
-
-.about_page h2 {
-  font-family: 'Cal Sans', sans-serif;
-}
-
 .about_page article {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -39,7 +30,6 @@
   margin-bottom: 2rem;
   opacity: 0.9;
 }
-
 .primary {
   background: linear-gradient(45deg, #ff6b6b, #ee5a24);
   color: white;
@@ -68,7 +58,6 @@
   align-items: center;
 }
 .group-info h2 {
-  font-family: 'Cal Sans', sans-serif;
   font-size: 2rem;
   text-align: center;
   color: #fff;
@@ -103,8 +92,7 @@
 .group-info .row img {
   width: 40px;
   height: 40px;
-  filter: brightness(0) saturate(100%) invert(81%) sepia(33%) saturate(272%) hue-rotate(61deg) brightness(101%) contrast(92%);
-}
+  }
 .group-info .row h2 {
   font-size: 1.4rem;
   margin: 0;
@@ -112,13 +100,19 @@
   color: #c8fcb3;
 }
 @media (max-width: 768px) {
-  .group-info .info-box {
+  .info-box {
     flex-direction: column;
     align-items: center;
   }
   .group-info .row {
     justify-content: flex-start;
   }
+}
+.info-box li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #eee;
 }
 .task {
   counter-reset: member;
@@ -130,7 +124,6 @@
   color: #fff;
 }
 .task h2 {
-  font-family: 'Cal Sans', sans-serif;
   font-size: 2rem;
   text-align: center;
   color: #fff;
