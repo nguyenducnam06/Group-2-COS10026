@@ -11,27 +11,16 @@
   margin-bottom: 32px;
   font-size: 1.2rem;
 }
+::placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+}
 
 .formtitle {
   text-align: center;
   color: #ece9e7;
   margin-bottom: 12px;
 }
-
-#applicationForm {
-  width: 50vw;
-  margin: 0 auto;
-  margin-bottom: 24px;
-  padding: 24px;
-  background: linear-gradient(
-    180deg,
-    rgba(145, 86, 241, 0.5),
-    rgba(212, 163, 226, 0.5)
-  );
-  border-radius: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
 
 
 #jobRef {
@@ -60,6 +49,9 @@ fieldset {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
 }
 
 textarea {
@@ -102,4 +94,36 @@ button {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+input[type="date"] {
+  width: 100%;
+}
+
+.section{
+  width: 50vw;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(145, 86, 241, 0.6),
+    rgba(212, 163, 226, 0.6)
+  );
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#applicationForm {
+  width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  padding: 24px;
+  border-radius: 30px;
+  border: 1px inset #ece9e7;
+    background: linear-gradient(
+    0deg,
+    rgba(145, 86, 241, 0.5),
+    rgba(20, 19, 33, 0.5)
+  );
 }
