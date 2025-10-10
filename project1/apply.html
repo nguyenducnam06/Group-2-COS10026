@@ -38,6 +38,8 @@
     </header>
 
     <main>
+        <button id="back" class="secondary"><a href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a></button>
+
         <div class="center_aligned">
             <h1>Join Us</h1>
             <p>Take the first step and apply today, we'd love to have you on board!</p>
@@ -142,7 +144,7 @@
                     </div>
                     <div class="textbox">
                         <legend for="postcode">Postcode:</legend>
-                        <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}"
+                        <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" maxlength="4"
                             title="Please enter your postcode" placeholder="1234" required>
                     </div>
                 </div>
@@ -186,7 +188,7 @@
 
 
                     <label for="skill1">Networking
-                        <input type="checkbox" id="skill1" name="skills" value="Networking" required>
+                        <input type="checkbox" id="skill1" name="skills" value="Networking">
                     </label>
 
                     <label for="skill2">Communication
