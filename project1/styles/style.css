@@ -303,3 +303,7 @@ a:hover {
   padding: 24px 40px;
   box-shadow: 0px 12px 100px #090310ad;
 }
+
+.hidden {
+  display: none;
+}

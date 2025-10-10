@@ -1,5 +1,7 @@
 <!-- Person In Charge: Nguyen Duc Nam
- Student ID: 105544406 -->
+ Student ID: 105544406
+ ChatGPT prompts for clients, journey, vision sections: Write me a short content about the company's clients, journey in a timeline style and company vision with 3 bullet points of a network company called NetVision
+ SVG source: Iconify plugin on Figma-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +26,7 @@
 <body>
     <!-- Header Section -->
     <header>
+        <img src="images/svg/logo.svg" alt="NetVision Logo" class="logo">
         <h3>NetVision</h3>
         <nav>
             <ul>
@@ -44,6 +47,7 @@
         <button id="back" class="secondary"><a href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a></button>
         <!-- Search bar -->
         <section class="input_with_button">
+            <label for="search" class="hidden">Search</label>
             <input type="text" name="search" id="search" placeholder="Search something" />
             <button class="primary">Search</button>
         </section>
@@ -60,7 +64,7 @@
                     <button class="secondary"><a href="jobs.html">All Positions</a></button>
                 </div>
             </div>
-            <!-- Introduction Images -->
+            <!-- Introduction Images, source: https://3dicons.co/ -->
             <div class="intro_img">
                 <img src="images/bulb.png" class="intro_img1" alt="Bulb">
                 <img src="images/shield.png" class="intro_img2" alt="Shield">
@@ -268,6 +272,7 @@
             <h1>Stay Updated With Us</h1>
             <p>Subscribe to our newsletter and get the latest news on company updates, recruitment information</p>
             <div class="input_with_button">
+                <label for="email" class="hidden">Email</label>
                 <input type="email" name="email" id="email" placeholder="joefred@gmail.com" maxlength="100" />
                 <button id="subscribe" class="primary">Subscribe</button>
             </div>
@@ -283,6 +288,7 @@
             </aside>
             <aside class="left_aligned">
                 <h3>Contact Us</h3>
+                <!-- Group Jira site -->
                 <div class="row">
                     <img src="images/svg/jira.svg" alt="Jira">
                     <p><a href="https://group2cos10026.atlassian.net/jira/software/projects/SCRUM/boards/1"
@@ -297,6 +303,7 @@
                     <img src="images/svg/phone.svg" alt="Phone">
                     <p>+84 746 265 999</p>
                 </div>
+                <!-- Location source: Google Maps -->
                 <div class="row">
                     <img src="images/svg/location.svg" alt="Location">
                     <p><a href="https://maps.app.goo.gl/DdpmDrBmuNDem2KX7" target="_blank">80 Duy Tan, Hanoi,
@@ -306,6 +313,7 @@
             </aside>
             <aside class="left_aligned">
                 <h3>Follow Us</h3>
+                <!-- Social media platforms: Facebook, Instagram, Twitter, LinkedIn -->
                 <div class="row">
                     <a href="https://www.facebook.com/" target="_blank"><img src="images/svg/facebook.svg"
                             alt="Facebook"></a>
