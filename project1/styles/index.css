@@ -42,21 +42,6 @@
   filter: blur(4px);
 }
 
-.achievement {
-  margin-top: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 64px;
-  min-width: 300px;
-  flex-wrap: wrap;
-  border: 1px solid #ece9e7;
-  border-radius: 100px;
-  background: linear-gradient(160deg, #9e56f100, #d08de24e);
-  padding: 24px 40px;
-  box-shadow: 0px 12px 100px #090310ad;
-}
-
 .journey_content {
   width: 40vw;
 }
