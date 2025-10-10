@@ -19,7 +19,8 @@ h3,
 h4,
 h5,
 button,
-button a,
+a.primary,
+a.secondary,
 li a {
   font-family: "Cal Sans", Tahoma, Geneva, Verdana, sans-serif, "Gill Sans MT",
     Calibri, "Trebuchet MS", sans-serif, sans-serif;
@@ -136,12 +137,16 @@ footer a:hover {
   color: #c6e7a3;
 }
 
-button {
+button,
+a.primary,
+a.secondary {
   border-radius: 50px;
   padding: 12px 24px;
   cursor: pointer;
   backdrop-filter: blur(12px);
   font-size: large;
+
+  text-align: center;
 }
 
 .button_row {
@@ -150,22 +155,26 @@ button {
   gap: 12px;
 }
 
-button.primary {
+button.primary,
+a.primary {
   background: linear-gradient(45deg, #9156f1, #9156f1);
   border: none;
 }
 
-button.primary:hover {
+button.primary:hover,
+a.primary:hover {
   background: linear-gradient(45deg, #d4a3e2, #9156f1);
   box-shadow: 5px 0px 50px #9156f1ab, -5px 0px 50px #d4a3e2a5;
 }
 
-button.secondary {
+button.secondary,
+a.secondary {
   background: rgba(198, 231, 163, 0.3);
   border: 1px solid #c6e7a3;
 }
 
-button.secondary:hover {
+button.secondary:hover,
+a.secondary:hover {
   background: #c6e7a3;
   box-shadow: 0px 0px 50px #c6e7a3a7;
 }
@@ -173,7 +182,8 @@ button.secondary:hover {
 button:hover,
 .number:hover,
 .card:hover,
-a:hover {
+a.primary:hover,
+a.secondary:hover {
   transform: scale(1.05);
 }
 

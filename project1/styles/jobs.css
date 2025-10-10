@@ -21,7 +21,6 @@
   object-fit: cover;
   flex: 1;
   border-radius: 20px;
-  
 }
 @media (max-width: 768px) {
   .jobs_intro {
@@ -155,10 +154,10 @@ hr.secondary {
   display: block;
 }
 
-/* styling the buttons */
+/* styling the link buttons */
 
-.job_details aside button,
-.job_card button {
+.job_details aside a,
+.job_card a {
   width: 100%;
   margin-top: 12px;
 }
