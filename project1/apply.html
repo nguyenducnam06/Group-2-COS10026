@@ -39,7 +39,7 @@
     </header>
 
     <main>
-        <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a>
+        <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="" aria-hidden="true"></a>
 
         <div class="center_aligned">
             <h1>Join Us</h1>
@@ -51,7 +51,7 @@
             <p class="formtitle">Fill out the form - Be a part of our team!</p>
             <!-- Job reference number -->
             <div class="section">
-                <legend for="jobRef">Job reference number:</legend>
+                <label for="jobRef">Job reference number:</label>
                 <select id="jobRef" name="jobRef" required>
                     <option value="">Select job reference</option>
                     <option value="JNT01">JNT01 - Junior Network Technician </option>
@@ -71,12 +71,12 @@
                 <!-- First name and Last name -->
                 <div id="name">
                     <div class="textbox">
-                        <legend for="firstName">First name:</legend>
+                        <label for="firstName">First name:</label>
                         <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
                             title="Please enter your first name" required>
                     </div>
                     <div class="textbox">
-                        <legend for="lastName">Last name:</legend>
+                        <label for="lastName">Last name:</label>
                         <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
                             title="Please enter your last name" required>
                     </div>
@@ -84,8 +84,8 @@
                 <!-- Date of birth and Gender -->
                 <div id="dobgender">
                     <div id="dob">
-                        <legend for="dob">Date of Birth:</legend>
-                        <input type="date" name="dob" id="dob" required>
+                        <label for="DateOfBirth">Date of Birth:</label>
+                        <input type="date" name="dob" id="DateOfBirth" required>
                     </div>
                     <div id="gender">
                         <fieldset>
@@ -115,13 +115,13 @@
                 </aside><br>
                 <div id="location">
                     <div class="textbox">
-                        <legend for="street">Street Address:</legend>
+                        <label for="street">Street Address:</label>
                         <input type="text" id="street" name="street" maxlength="40"
                             title="Please enter your street address" placeholder="123Main street" required>
                     </div>
 
                     <div class="textbox">
-                        <legend for="suburb">Suburb/Town:</legend>
+                        <label for="suburb">Suburb/Town:</label>
                         <input type="text" id="suburb" name="suburb" maxlength="40"
                             title="Please enter your suburb or town" placeholder="Location" required>
                     </div>
@@ -130,7 +130,7 @@
                 <!-- State and Postcode -->
                 <div id="address">
                     <div class="textbox">
-                        <legend for="state">State:</legend>
+                        <label for="state">State:</label>
                         <select id="state" name="state" required>
                             <option value="">-- Select state --</option>
                             <option value="VIC">VIC</option>
@@ -144,7 +144,7 @@
                         </select>
                     </div>
                     <div class="textbox">
-                        <legend for="postcode">Postcode:</legend>
+                        <label for="postcode">Postcode:</label>
                         <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" maxlength="4"
                             title="Please enter your postcode" placeholder="1234" required>
                     </div>
@@ -162,13 +162,13 @@
                 <!-- Email and phone number -->
                 <div id="contactinfo">
                     <div class="textbox">
-                        <legend for="email">Email address:</legend>
+                        <label for="emailapply">Email address:</label>
                         <input id="emailapply" type="email" name="email"
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
                             title="Please enter a valid email address" placeholder="example@email" required>
                     </div>
                     <div class="textbox">
-                        <legend for="phone">Phone number:</legend>
+                        <label for="phone">Phone number:</label>
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8,12}"
                             title="Please enter your phone number" placeholder="XXXXXXXX" required>
                     </div>
@@ -207,7 +207,7 @@
                 <br>
 
                 <!-- Other skills -->
-                <legend for="otherSkills">Other skills:</legend><br>
+                <label for="otherSkills">Other skills:</label><br>
                 <textarea id="otherSkills" name="otherSkills" rows="4" cols="40"
                     placeholder="Describe other skills..."></textarea>
             </div>
@@ -215,8 +215,11 @@
             <button type="submit" value="Submit Application" class="primary">
                 Submit Application
             </button>
+            <br>
+            <button type="reset" value="Reset Form" class="secondary">
+                Reset Form
+            </button>
         </form>
-        </div>
     </main>
     <footer>
         <div class="row">
@@ -228,7 +231,7 @@
                 <h3>Contact Us</h3>
                 <!-- Group Jira site -->
                 <div class="row">
-                    <img src="images/svg/jira.svg" alt="Jira">
+                    <img src="images/svg/jira.svg" alt="" aria-hidden="true">
                     <p><a href="https://group2cos10026.atlassian.net/jira/software/projects/SCRUM/boards/1"
                             target="_blank">Our Jira
                             board</a></p>
@@ -240,16 +243,16 @@
                             repository</a></p>
                 </div>
                 <div class="row">
-                    <img src="images/svg/mail.svg" alt="Mail">
+                    <img src="images/svg/mail.svg" alt="" aria-hidden="true">
                     <p><a href="mailto:info@netvision.com.au">info@netvision.com.au</a></p>
                 </div>
                 <div class="row">
-                    <img src="images/svg/phone.svg" alt="Phone">
+                    <img src="images/svg/phone.svg" alt="" aria-hidden="true">
                     <p>+84 746 265 999</p>
                 </div>
                 <!-- Location source: Google Maps -->
                 <div class="row">
-                    <img src="images/svg/location.svg" alt="Location">
+                    <img src="images/svg/location.svg" alt="" aria-hidden="true">
                     <p><a href="https://maps.app.goo.gl/DdpmDrBmuNDem2KX7" target="_blank">80 Duy Tan, Hanoi,
                             Vietnam</a>
                     </p>
