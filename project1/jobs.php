@@ -8,23 +8,12 @@
 
 <!-- Meta data information and stylesheet -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NetVision - Job Description Page">
-    <meta name="keywords"
-        content="NetVision, Job Description, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
-    <meta name="author" content="Group 2 - COS10026">
-    <title>NetVision - Job Description</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/jobs.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-</head>
+<?php
+$pageTitle = "Job Description";
+$pageDescription = "Explore the various job opportunities at NetVision.";
+$pageSpecificStyle = "jobs";
+include('metadata.inc');
+?>
 
 <body id="job">
     <!-- Header and Navigation Bar -->
@@ -33,7 +22,8 @@
     <!-- Main Content -->
     <main>
         <!-- Back to top button -->
-        <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a>
+        <?php include 'backtotopbutton.inc'; ?>
+
         <!-- Top Section -->
         <section class="jobs_intro content_background">
             <!-- Video source: Canva.com -->

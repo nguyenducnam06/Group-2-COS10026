@@ -4,29 +4,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NetVision - Job Application Page">
-    <meta name="keywords" content="NetVision, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
-    <meta name="SonDo" content="Group 2 - COS10026">
-    <title>NetVision - Apply</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/apply.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-</head>
+<?php
+$pageTitle = "Job Application";
+$pageDescription = "Apply for a job at NetVision.";
+$pageSpecificStyle = "apply";
+include('metadata.inc');
+?>
 
 <body>
     <!-- Header inclusion -->
     <?php include 'header.inc'; ?>
 
     <main>
-        <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="" aria-hidden="true"></a>
+        <?php include 'backtotopbutton.inc'; ?>
 
         <div class="center_aligned">
             <h1>Join Us</h1>

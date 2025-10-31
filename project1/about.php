@@ -4,29 +4,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NetVision - About Page">
-  <meta name="keywords" content="NetVision, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
-  <meta name="author" content="Group 2 - COS10026">
-  <title>NetVision - About</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/about.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet">
-</head>
+<?php
+$pageTitle = "About Us";
+$pageDescription = "Learn more about our group and our mission.";
+$pageSpecificStyle = "about";
+include('metadata.inc');
+?>
 
 <body id="about">
   <!-- Header inclusion -->
   <?php include 'header.inc'; ?>
 
   <main>
-    <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a>
+     <?php include 'backtotopbutton.inc'; ?>
+
     <section class="about_intro">
       <img src="images/groupimage.png" alt="My team">
       <article>

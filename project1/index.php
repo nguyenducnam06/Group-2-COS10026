@@ -6,22 +6,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NetVision - Home Page">
-    <meta name="keywords" content="NetVision, Careers, Network Jobs, Recruitment, Opportunities, IT Jobs">
-    <meta name="author" content="Group 2 - COS10026">
-    <title>NetVision - Home</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-</head>
+<?php
+$pageTitle = "Home";
+$pageDescription = "Leading Network and Cybersecurity Solutions";
+$pageSpecificStyle = "index";
+include('metadata.inc');
+?>
 
 <body>
     <!-- Header Section -->
@@ -30,7 +20,8 @@
     <!-- Main Content -->
     <main>
         <!-- Back to top button -->
-        <a id="back" class="secondary" href="#"><img src="images/svg/to_top.svg" alt="Back to top"></a>
+        <?php include 'backtotopbutton.inc'; ?>
+
         <!-- Search bar -->
         <section class="input_with_button">
             <label for="search" class="hidden">Search</label>
