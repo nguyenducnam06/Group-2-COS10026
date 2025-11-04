@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pwd = '';
-$sql_db = '';
+$sql_db = 'group2_cos10026';
 
 $dbconn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$dbconn) {

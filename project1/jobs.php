@@ -13,6 +13,8 @@ $pageTitle = "Job Description";
 $pageDescription = "Explore the various job opportunities at NetVision.";
 $pageSpecificStyle = "jobs";
 include('metadata.inc');
+require_once 'settings.php';
+$dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
 ?>
 
 <body id="job">
@@ -27,7 +29,7 @@ include('metadata.inc');
         <!-- Top Section -->
         <section class="jobs_intro content_background">
             <!-- Video source: Canva.com -->
-            <video autoplay muted loop playsinline>
+            <video autoplay muted playsinline>
                 <source src="images/jobs.mp4" type="video/mp4">
             </video>
             <article class="left_aligned">
@@ -41,75 +43,56 @@ include('metadata.inc');
         </section>
 
         <!-- Job Listings -->
+
         <h1 class="center_aligned">Your Available Opportunities</h1>
         <section class="input_with_button">
             <label for="search" class="hidden">Search</label>
             <input type="text" name="search" id="search" placeholder="Search for jobs" />
             <button class="primary">Search</button>
         </section>
-        <section class="row">
-            <article class="job_card">
-                <div class="title">
-                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                    <div>
-                        <h3>Junior Network Technician</h3>
-                        <p>Reference Number: JNT01</p>
-                    </div>
-                </div>
-                <h4>$45,000 - $55,000 per annum</h4>
-                <ul>
-                    <li>Location: Ha Noi, Vietnam</li>
-                    <li>Direct Supervisor: Senior Network Administrator</li>
-                    <li>Employment Type: Full-time</li>
-                    <li>Experience Level: Entry-level</li>
-                </ul>
-                <p>An entry-level role focused on the physical installation, configuration, and foundational
-                    maintenance of network hardware (routers, switches, firewalls) and cabling infrastructure.</p>
-                <a class="secondary" href="#job1">Explore</a>
-            </article>
-
-            <article class="job_card">
-                <div class="title">
-                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                    <div>
-                        <h3>Intern Business Analysis</h3>
-                        <p>Reference Number: IBA02</p>
-                    </div>
-                </div>
-                <h4>$18 - $22 per hour</h4>
-                <ul>
-                    <li>Location: Ha Noi, Vietnam</li>
-                    <li>Direct Supervisor: Senior Business Analyst</li>
-                    <li>Employment Type: Internship</li>
-                    <li>Experience Level: Intern</li>
-                </ul>
-                <p>A 3-6 month internship designed to give experience in
-                    documenting analyzing business requirements to support IT
-                    solutions within the network administration context.</p>
-                <a class="secondary" href="#job2">Explore</a>
-            </article>
-
-            <article class="job_card">
-                <div class="title">
-                    <img src="images/job1.png" alt="job illustration source: pinterest.com">
-                    <div>
-                        <h3>Telephone Sales Representative</h3>
-                        <p>Reference Number: TSL03</p>
-                    </div>
-
-                </div>
-                <h4>$40,000 - $50,000 base</h4>
-                <ul>
-                    <li>Location: Ha Noi, Vietnam</li>
-                    <li>Direct Supervisor: Sales Manager</li>
-                    <li>Employment Type: Full-time</li>
-                    <li>Experience Level: Entry-level</li>
-                </ul>
-                <p>A sales role responsible for driving revenue growth by making outbound calls, responding to
-                    inbound inquiries, and selling our network administration services.</p>
-                <a class="secondary" href="#job3">Explore</a>
-            </article>
-        </section>
+        <?php
+        if (!$dbconn) {
+            echo "<p>Database connection failure</p>";
+            exit;
+        } else {
+            if (isset($_GET['search'])) {
+                $search = mysqli_real_escape_string($dbconn, $_GET['search']);
+                $sql = "SELECT * FROM jobs WHERE MATCH (JobTitle, RefNum, Salary, Location, EmpType, ExpLevel, Description) AGAINST ('$search' IN NATURAL LANGUAGE MODE)";
+                $result = mysqli_query($dbconn, $sql);
+            } else {
+                $sql = "SELECT * FROM jobs";
+                $result = mysqli_query($dbconn, $sql);
+            }
+            if (mysqli_num_rows($result) > 0) {
+                echo "<section class=\"row\">";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<article class=\"job_card\">
+                                <div class=\"title\">
+                                    <img src=" . htmlspecialchars($row['Img']) . ">
+                                    <div>
+                                        <h3>" . htmlspecialchars($row['JobTitle']) . "</h3>
+                                        <p>Reference Number: " . htmlspecialchars($row['RefNum']) . "</p>
+                                    </div>
+                                </div>
+                                <h4>$" . htmlspecialchars($row['Salary']) . " </h4>
+                                <ul>
+                                    <li>Location: " . htmlspecialchars($row['Location']) . "</li>
+                                    <li>Direct Supervisor: " . htmlspecialchars($row['Supervisor']) . "</li>
+                                    <li>Employment Type: " . htmlspecialchars($row['EmpType']) . "</li>
+                                    <li>Experience Level: " . htmlspecialchars($row['ExpLevel']) . "</li>
+                                </ul>
+                                <p>" . htmlspecialchars($row['Description']) . "</p>
+                                <a class=\"secondary\" href=\"#job" . htmlspecialchars($row['JobID']) . "\">Explore</a>
+                            </article>";
+                }
+                echo "</section>";
+            } else {
+                echo "No matching jobs found.";
+            }
+            mysqli_free_result($result);
+            mysqli_close($dbconn);
+        }
+        ?>
         <hr class="primary">
 
         <!-- Section 2: Jobs in Details -->
