@@ -40,13 +40,14 @@
 
 /* Styling for job list in short form */
 .row {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  flex-direction: row;
-  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  gap: 12px;
 }
+
 .job_card {
   position: relative;
   display: flex;
@@ -66,18 +67,10 @@
   box-sizing: border-box;
   flex: 0 1 auto;                      
   width: clamp(300px, 40%, 420px);    
-  max-width: 420px;
+  max-width: 500px;
   min-width: 300px;
-
-  margin: 12px; /* spacing and allow centering inside .row */
+  margin: 12px;
 }
-@media (max-width: 600px) {
-  .job_card {
-    width: calc(100% - 48px);
-    min-width: auto;
-  }
-}
-
 .job_card:hover {
   box-shadow: 10px 10px 50px #9156f1aa, -10px 0px 50px #d4a3e2aa;
   transform: scale(1.02);
@@ -89,12 +82,8 @@
   grid-template-columns: 1fr 3fr;
 }
 .job_card img {
-  display: block;
-  width: auto;     
-  max-width: 120px;   
+  width: 90%;
   height: auto;
-  object-fit: contain;
-  margin: 0 auto;    
 }
 .job_card h4 {
   margin-top: 12px;

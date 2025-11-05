@@ -47,53 +47,53 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
         <h1 class="center_aligned">Your Available Opportunities</h1>
         <section class="input_with_button">
             <form action="jobs.php" method="GET">
-                <label for="item" class="hidden">Search</label>
+                <label for="search" class="hidden">Search</label>
                 <input type="text" name="search" id="search" placeholder="Search for jobs">
                 <input type="submit" value="Search">
             </form>
         </section>
-        <?php
-        if (!$dbconn) {
-            echo "<p>Database connection failure</p>";
-            exit;
-        } else {
-            if (isset($_GET['search'])) {
-                $search = mysqli_real_escape_string($dbconn, $_GET['search']);
-                $sql = "SELECT * FROM jobs WHERE JobTitle LIKE '%$search%' OR RefNum LIKE '%$search%' OR Location LIKE '%$search%' OR Supervisor LIKE '%$search%' OR EmpType LIKE '%$search%' OR ExpLevel LIKE '%$search%' OR Description LIKE '%$search%'";
-                $result = mysqli_query($dbconn, $sql);
+        <section class="row">
+            <?php
+            if (!$dbconn) {
+                echo "<p>Database connection failure</p>";
+                exit;
             } else {
-                $sql = "SELECT * FROM jobs";
-                $result = mysqli_query($dbconn, $sql);
-            }
-            if (mysqli_num_rows($result) > 0) {
-                echo "<section class=\"row\">";
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<article class=\"job_card\">
-                                <div class=\"title\">
-                                    <img src=" . htmlspecialchars($row['Img']) . ">
-                                    <div>
-                                        <h3>" . htmlspecialchars($row['JobTitle']) . "</h3>
-                                        <p>Reference Number: " . htmlspecialchars($row['RefNum']) . "</p>
-                                    </div>
-                                </div>
-                                <h4>" . htmlspecialchars($row['Salary']) . " </h4>
-                                <ul>
-                                    <li>Location: " . htmlspecialchars($row['Location']) . "</li>
-                                    <li>Direct Supervisor: " . htmlspecialchars($row['Supervisor']) . "</li>
-                                    <li>Employment Type: " . htmlspecialchars($row['EmpType']) . "</li>
-                                    <li>Experience Level: " . htmlspecialchars($row['ExpLevel']) . "</li>
-                                </ul>
-                                <p>" . htmlspecialchars($row['Description']) . "</p>
-                                <a class=\"secondary\" href=\"#job" . htmlspecialchars($row['JobID']) . "\">Explore</a>
-                            </article>";
+                if (isset($_GET['search'])) {
+                    $search = mysqli_real_escape_string($dbconn, $_GET['search']);
+                    $sql = "SELECT * FROM jobs WHERE JobTitle LIKE '%$search%' OR RefNum LIKE '%$search%' OR Location LIKE '%$search%' OR Supervisor LIKE '%$search%' OR EmpType LIKE '%$search%' OR ExpLevel LIKE '%$search%' OR Description LIKE '%$search%'";
+                    $result = mysqli_query($dbconn, $sql);
+                } else {
+                    $sql = "SELECT * FROM jobs";
+                    $result = mysqli_query($dbconn, $sql);
                 }
-                echo "</section>";
-            } else {
-                echo "<p>No matching jobs found.</p>";
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<article class=\"job_card\">
+                                        <div class=\"title\">
+                                            <img src=\"" . htmlspecialchars($row['Img']) . "\" alt = \"job illustration\">
+                                            <div>
+                                                <h3>" . htmlspecialchars($row['JobTitle']) . "</h3>
+                                                <p>Reference Number: " . htmlspecialchars($row['RefNum']) . "</p>                                                
+                                            </div>
+                                        </div> 
+                                        <h4>" . htmlspecialchars($row['Salary']) . " </h4>                               
+                                        <ul>
+                                            <li>Location: " . htmlspecialchars($row['Location']) . "</li>
+                                            <li>Direct Supervisor: " . htmlspecialchars($row['Supervisor']) . "</li>
+                                            <li>Employment Type: " . htmlspecialchars($row['EmpType']) . "</li>
+                                            <li>Experience Level: " . htmlspecialchars($row['ExpLevel']) . "</li>
+                                        </ul>
+                                        <p>" . htmlspecialchars($row['Description']) . "</p>
+                                        <a class=\"secondary\" href=\"#job" . htmlspecialchars($row['JobID']) . "\">Explore</a>
+                                    </article>";
+                    }
+                } else {
+                    echo "<p>No matching jobs found.</p>";
+                }
+                mysqli_free_result($result);
             }
-            mysqli_free_result($result);
-        }
-        ?>
+            ?>
+        </section>
         <hr class="primary">
 
         <!-- Section 2: Jobs in Details -->
