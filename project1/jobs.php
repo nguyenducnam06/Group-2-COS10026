@@ -9,6 +9,7 @@
 <!-- Meta data information and stylesheet -->
 
 <?php
+session_start();
 $pageTitle = "Job Description";
 $pageDescription = "Explore the various job opportunities at NetVision.";
 $pageSpecificStyle = "jobs";

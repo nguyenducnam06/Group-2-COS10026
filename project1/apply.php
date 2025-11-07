@@ -5,6 +5,7 @@
 <html lang="en">
 
 <?php
+session_start();
 $pageTitle = "Job Application";
 $pageDescription = "Apply for a job at NetVision.";
 $pageSpecificStyle = "apply";
@@ -189,13 +190,14 @@ include('metadata.inc');
                     placeholder="Describe other skills..."></textarea>
             </div>
             <br>
-            <button type="submit" value="Submit Application" class="primary">
-                Submit Application
-            </button>
-            <br>
-            <button type="reset" value="Reset Form" class="secondary">
-                Reset Form
-            </button>
+            <div class="button_row">
+                <button type="submit" value="Submit Application" class="primary">
+                    Submit Apply Form
+                </button>
+                <button type="reset" value="Reset Form" class="secondary">
+                    Reset Form
+                </button>
+            </div>
         </form>
     </main>
     <!-- Footer inclusion -->

@@ -5,6 +5,7 @@
 <html lang="en">
 
 <?php
+session_start();
 $pageTitle = "About Us";
 $pageDescription = "Learn more about our group and our mission.";
 $pageSpecificStyle = "about";

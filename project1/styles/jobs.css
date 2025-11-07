@@ -66,8 +66,8 @@
   backdrop-filter: blur(12px);
   padding: 3%;
   box-sizing: border-box;
-  flex: 0 1 auto;                      
-  width: clamp(300px, 40%, 420px);    
+  flex: 0 1 auto;
+  width: clamp(300px, 40%, 420px);
   max-width: 500px;
   min-width: 300px;
   margin: 12px;
@@ -165,12 +165,4 @@ hr.secondary {
   margin-left: auto;
   margin-right: auto;
   display: block;
-}
-
-/* styling the link buttons */
-
-.job_details aside a,
-.job_card a {
-  width: 100%;
-  margin-top: 12px;
 }

@@ -12,7 +12,7 @@
   font-size: 1.2rem;
 }
 ::placeholder {
-  color: #b8b8b8;
+  color: #cecece;
   opacity: 1;
 }
 
@@ -22,13 +22,12 @@
   margin-bottom: 12px;
 }
 
-
 #jobRef {
   color: #ece9e7;
   background: linear-gradient(140deg, #b356f152, #c6e7a32d);
   width: 100%;
   margin-bottom: 15px;
-} 
+}
 
 #jobRef option {
   color: #ece9e7;
@@ -67,11 +66,6 @@ textarea {
   background-color: #ffffff;
 }
 
-button {
-  display: block;
-  margin: 0 auto;
-}
-
 #name,
 #location,
 #address,
@@ -82,10 +76,10 @@ button {
   justify-content: space-between;
 }
 
-#name,
-#location,
-#address,
-#contactinfo,
+#name > *,
+#location > *,
+#address > *,
+#contactinfo > *,
 #dobgender > * {
   flex: 1;
 }
@@ -93,14 +87,14 @@ button {
 .textbox {
   display: flex;
   flex-direction: column;
+}
+
+.textbox input,
+.textbox select {
   width: 100%;
 }
 
-input[type="date"] {
-  width: 100%;
-}
-
-.section{
+.section {
   width: 50vw;
   margin: 0 auto;
   margin-bottom: 24px;
@@ -121,7 +115,7 @@ input[type="date"] {
   padding: 24px;
   border-radius: 30px;
   border: 1px inset #ece9e7;
-    background: linear-gradient(
+  background: linear-gradient(
     0deg,
     rgba(145, 86, 241, 0.5),
     rgba(20, 19, 33, 0.5)

@@ -7,6 +7,7 @@
 <html lang="en">
 
 <?php
+session_start();
 $pageTitle = "Home";
 $pageDescription = "Leading Network and Cybersecurity Solutions";
 $pageSpecificStyle = "index";
@@ -37,8 +38,8 @@ include('metadata.inc');
                     Network
                     Administration, trusted by partners in over 30 countries worldwide.</p>
                 <div class="row">
-                    <a class="primary" href="apply.html">Join Us</a>
-                    <a class="secondary" href="jobs.html">All Positions</a>
+                    <a class="primary" href="apply.php">Join Us</a>
+                    <a class="secondary" href="jobs.php">All Positions</a>
                 </div>
             </div>
             <!-- Introduction Images, source: https://3dicons.co/ -->
