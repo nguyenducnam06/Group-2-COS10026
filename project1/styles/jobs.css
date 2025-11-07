@@ -21,6 +21,7 @@
   object-fit: cover;
   flex: 1;
   border-radius: 20px;
+  prefers-reduced-motion: reduce;
 }
 @media (max-width: 768px) {
   .jobs_intro {

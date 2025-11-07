@@ -29,7 +29,7 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
         <!-- Top Section -->
         <section class="jobs_intro content_background">
             <!-- Video source: Canva.com -->
-            <video autoplay muted playsinline>
+            <video muted playsinline controls autoplay>
                 <source src="images/jobs.mp4" type="video/mp4">
             </video>
             <article class="left_aligned">
@@ -46,7 +46,7 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
         <h1 class="center_aligned">Your Available Opportunities</h1>
         <section class="input_with_button">
-            <form action="jobs.php" method="GET">
+            <form action="jobs.php" method="POST">
                 <label for="search" class="hidden">Search</label>
                 <input type="text" name="search" id="search" placeholder="Search for jobs">
                 <input type="submit" value="Search">
@@ -58,8 +58,8 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 echo "<p>Database connection failure</p>";
                 exit;
             } else {
-                if (isset($_GET['search'])) {
-                    $search = mysqli_real_escape_string($dbconn, $_GET['search']);
+                if (isset($_POST['search'])) {
+                    $search = mysqli_real_escape_string($dbconn, $_POST['search']);
                     $sql = "SELECT * FROM jobs WHERE JobTitle LIKE '%$search%' OR RefNum LIKE '%$search%' OR Location LIKE '%$search%' OR Supervisor LIKE '%$search%' OR EmpType LIKE '%$search%' OR ExpLevel LIKE '%$search%' OR Description LIKE '%$search%'";
                     $result = mysqli_query($dbconn, $sql);
                 } else {
