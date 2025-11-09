@@ -99,8 +99,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  text-align: left;
-}
+  }
 .contribution {
   margin-top: 24px;
   counter-increment: member;
