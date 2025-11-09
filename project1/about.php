@@ -84,35 +84,33 @@ include('metadata.inc');
         <div class="contribution">
           <h3>Nguyen Duc Nam</h3>
           <ul>
-            <li>Team leader</li>
-            <li>Assign specific responsibilities to each team member</li>
-            <li>Design the layout of the homepage</li>
-            <li>Write code for the Home page</li>
+            <li>Planned and delegated tasks appropriately to each team member</li>
+            <li>Developed the login and search functions</li>
+            <li>Designed the layout of the management page</li>
           </ul>
         </div>
-
         <div class="contribution">
           <h3>Nguyen Nhat Lam</h3>
           <ul>
-            <li>Design the layout of the job description page</li>
-            <li>Write code for the Job Description page</li>
-            <li>Bug fixing</li>
+            <li>Create the job description database</li>
+            <li>Improved accessibility for the job description page</li>
+            <li>Braintormed ideas for the presentation content</li>
           </ul>
         </div>
         <div class="contribution">
           <h3>Hoang Thi Thuy Trang</h3>
           <ul>
-            <li>Design layout for the Group Details page</li>
-            <li>Write code for the Group Details page</li>
-            <li>Planning the requirement</li>
+            <li>Create a enhancements page as specified in the PDF file</li>
+            <li>Update members contribution on the about page</li>
+            <li>Edited the layout of presentation slides</li>
           </ul>
         </div>
         <div class="contribution">
           <h3>Do Trung Son</h3>
           <ul>
-            <li>Design layout for the Application page</li>
-            <li>Write code for the Application page</li>
-            <li>Brainstorming ideas for the web</li>
+            <li>Create an EOI table</li>
+            <li>Linked the apply page to submit data on the database</li>
+            <li>Contributed ideas for developing the presentation content</li>
           </ul>
         </div>
       </div>
