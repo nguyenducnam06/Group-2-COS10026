@@ -24,28 +24,32 @@ include('metadata.inc');
    
      <section>
         <h2>Enhancement 1: Access Control for Manage Page</h2>
-        <p>This enhancement ensures that only authorized users can access the management page.
-                In <code>manage.php</code>, a PHP session variable (<code>$_SESSION['userid']</code>) 
-                is checked before displaying any management content. 
-                If the user is not logged in, they are automatically redirected to <code>login.php</code>.
-                This prevents unauthorized users from directly accessing sensitive HR data.
-            </p>
+        <p>
+        The management page can only be accessed by authorized users thanks to this improvement. 
+        In order to prevent unauthorized access to sensitive HR data, users who are not signed in are automatically redirected to the login page. 
+        As a result, this enhancement keeps authorized personnel's experience seamless while enhancing security.
+        </p>
         </section>
 
         <section>
             <h2>Enhancement 2: Secure Login with Hashed Passwords</h2>
             <p>
-                The login system, implemented in <code>login.php</code> and 
-                <code>loginhandling.php</code>, uses secure authentication practices. 
-                It applies prepared statements to prevent SQL injection and 
-                uses PHP’s <code>password_hash()</code> and <code>password_verify()</code> 
-                functions to handle encrypted passwords. 
-                The <code>harsh.php</code> file was used to generate a hashed password for 
-                insertion into the database. 
-                Successful logins create session variables such as <code>userid</code> and 
-                <code>displayname</code> for personalized access control.
+        The user experience and security of the website are strengthened by this improvement. 
+        Only authorized users can now access personalized content thanks to the login system's strong authentication. 
+        Successful logins also result in customized sessions that give users access to features and access that are specific to them. 
+        Consequently, this enhancement offers a smooth, user-focused experience along with improved security.
             </p>
         </section>
+        <section>
+             <h2>Enhancement 3:Smart and Interactive Job Listings</h2>
+             <p>
+             This improvement greatly improves the functionality, presentation, and content of the website. 
+             In particular, job postings are now completely interactive and dynamic, updating automatically from the database to guarantee correct and up-to-date information. 
+             Additionally, users can effectively search and filter positions based on their preferences, including employment type, location, or job title. 
+            Thus, this enhancement offers a technically complex solution that improves user engagement and expedites the application process by fusing cutting-edge database-driven features with an easy-to-use user interface.
+            </p>
+        </section>
+
      </section>
       <!-- Footer inclusion -->
     <?php include 'footer.inc'; ?>
