@@ -59,16 +59,19 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 echo "<p>Database connection failure</p>";
                 exit;
             } else {
+                // Search function
                 if (isset($_POST['search'])) {
                     $search = mysqli_real_escape_string($dbconn, $_POST['search']);
                     $sql = "SELECT * FROM jobs WHERE JobTitle LIKE '%$search%' OR RefNum LIKE '%$search%' OR Location LIKE '%$search%' OR Supervisor LIKE '%$search%' OR EmpType LIKE '%$search%' OR ExpLevel LIKE '%$search%' OR Description LIKE '%$search%'";
                     $result = mysqli_query($dbconn, $sql);
                 } else {
+                    // If users do not search anything, display all jobs
                     $sql = "SELECT * FROM jobs";
                     $result = mysqli_query($dbconn, $sql);
                 }
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        // Display each job as a card
                         echo "<article class=\"job_card\">
                                         <div class=\"title\">
                                             <img src=\"" . htmlspecialchars($row['Img']) . "\" alt = \"job illustration\">
