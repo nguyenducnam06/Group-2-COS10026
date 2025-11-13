@@ -246,14 +246,28 @@ include('metadata.inc');
             </div>
         </section>
         <!-- Newsletter Section -->
-        <aside class="center_aligned">
+        <aside class="center_aligned" id="newsletter-section">
             <h1>Stay Updated With Us</h1>
             <p>Subscribe to our newsletter and get the latest news on company updates, recruitment information</p>
-            <div class="input_with_button">
+            <form class="input_with_button" action="subscribehandling.php" method="POST">
                 <label for="email" class="hidden">Email</label>
-                <input type="email" name="email" id="email" placeholder="joefred@gmail.com" maxlength="100" />
-                <button id="subscribe" class="primary">Subscribe</button>
-            </div>
+                <input type="email" name="email" id="email" placeholder="joefred@gmail.com" maxlength="100" required/>
+                <button type="submit" id="subscribe" class="primary">Subscribe</button>
+            </form>
+            <?php 
+            if (isset($_SESSION['subscribe'])) {
+                if ($_SESSION['subscribe'] == 'success') {
+                    echo '<h5>Successfully registered to receive information</h5>';
+                } else if ($_SESSION['subscribe'] == 'invalid') {
+                    echo '<h5>Please enter the correct email format</h5>';
+                } else if ($_SESSION['subscribe'] == 'existed') {
+                    echo '<h5>This email already exists, please enter another email</h5>';
+                } else {
+                    echo '<h5>Oops! There was an error, please try again latter</h5>';
+                }
+                unset($_SESSION['subscribe']);
+            }
+            ?>
         </aside>
     </main>
 
