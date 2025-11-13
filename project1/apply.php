@@ -10,6 +10,19 @@ $pageTitle = "Job Application";
 $pageDescription = "Apply for a job at NetVision.";
 $pageSpecificStyle = "apply";
 include('metadata.inc');
+require_once 'settings.php';
+$dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
+// Fetch job references from jobs table
+$jobRefs = [];
+$sql = "SELECT RefNum FROM jobs";
+$result = mysqli_query($dbconn, $sql);
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $jobRefs[] = $row['RefNum'];
+    }
+}
+mysqli_close($dbconn);
 ?>
 
 <body>
@@ -24,7 +37,7 @@ include('metadata.inc');
             <p>Take the first step and apply today, we'd love to have you on board!</p>
         </div>
 
-        <form id="applicationForm" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+        <form id="applicationForm" action="process_eoi.php" method="POST">
             <h3 class="formtitle">Application form</h3>
             <p class="formtitle">Fill out the form - Be a part of our team!</p>
             <!-- Job reference number -->
@@ -32,9 +45,11 @@ include('metadata.inc');
                 <label for="jobRef">Job reference number:</label>
                 <select id="jobRef" name="jobRef" required>
                     <option value="">Select job reference</option>
-                    <option value="JNT01">JNT01 - Junior Network Technician </option>
-                    <option value="IBA02">IBA02 - Intern Business Analysis</option>
-                    <option value="TSL03">TSL03 - Telephone Sales Representative</option>
+                <?php
+                foreach ($jobRefs as $ref) {
+                    echo "<option value='$ref'>$ref</option>";
+                }
+                ?>
                 </select>
             </div>
             <br>
@@ -167,19 +182,19 @@ include('metadata.inc');
 
 
                     <label for="skill1">Networking
-                        <input type="checkbox" id="skill1" name="skills" value="Networking">
+                        <input type="checkbox" id="skill1" name="skills[]" value="Networking">
                     </label>
 
                     <label for="skill2">Communication
-                        <input type="checkbox" id="skill2" name="skills" value="Communication">
+                        <input type="checkbox" id="skill2" name="skills[]" value="Communication">
                     </label>
 
                     <label for="skill3">Coding
-                        <input type="checkbox" id="skill3" name="skills" value="Coding">
+                        <input type="checkbox" id="skill3" name="skills[]" value="Coding">
                     </label>
 
                     <label for="skill4">Database knowledge
-                        <input type="checkbox" id="skill4" name="skills" value="DB_knowledge">
+                        <input type="checkbox" id="skill4" name="skills[]" value="DB_knowledge">
                     </label>
                 </fieldset>
                 <br>
