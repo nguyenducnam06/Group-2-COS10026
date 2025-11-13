@@ -22,13 +22,6 @@ include('metadata.inc');
     <main>
         <!-- Back to top button -->
         <?php include 'backtotopbutton.inc'; ?>
-
-        <!-- Search bar -->
-        <section class="input_with_button">
-            <label for="search" class="hidden">Search</label>
-            <input type="text" name="search" id="search" placeholder="Search something" />
-            <button class="primary">Search</button>
-        </section>
         <!-- Introduction Section -->
         <section class="intro">
             <div class="left_aligned">
