@@ -7,6 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 require_once 'settings.php';
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 // --- Function to sanitize user input ---
 function sanitize($data) {
@@ -42,7 +45,7 @@ $phone = sanitize($_POST['phone']);
 $skills = isset($_POST['skills']) ? implode(", ", $_POST['skills']) : '';
 $otherSkills = sanitize($_POST['otherSkills']);
 
-// --- Validate required fields ---
+// --- re-Validate required fields ---
 $errors = [];
 
 if (!preg_match("/^[A-Za-z]+$/", $firstName)) $errors[] = "Invalid first name (letters only).";
@@ -75,14 +78,42 @@ $applyDate = date("Y-m-d H:i:s");
 $sql = "INSERT INTO eoi (EOINumber, JobRef, FirstName, LastName, DateOfBirth, Gender, StreetAddress, Suburb, State, Postcode, Email, Phone, Skills, OtherSkills, ApplyDate)
         VALUES ('$EOINumber', '$jobRef', '$firstName', '$lastName', '$dob', '$gender', '$street', '$suburb', '$state', '$postcode', '$email', '$phone', '$skills', '$otherSkills', '$applyDate')";
 
-if (mysqli_query($conn, $sql)) {
-    echo "<h2>Thank you for your application!</h2>";
-    echo "<p>Your Expression of Interest has been successfully submitted.</p>";
-    echo "<p><strong>Your unique EOI Number: </strong> $EOINumber</p>";
-    echo "<a href='apply.php'>Submit another application</a>";
-} else {
-    echo "<h3>Error submitting application:</h3> " . mysqli_error($conn);
-}
+$applySuccess = mysqli_query($conn, $sql);
 
 mysqli_close($conn);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<?php include_once "metadata.inc"; ?>
+<body>
+    <?php include 'header.inc'; ?>
+    <main>
+
+        <?php if ($applySuccess): ?>
+            <h1>Application Submitted Successfully</h1>
+            <h3>Thank you, your EOI has been recorded.</h3>
+
+            <div>
+                <h2>Your Submitted Details</h2>
+                <p><strong>Job Reference:</strong> <?= $jobRef ?></p>
+                <p><strong>Name:</strong> <?= $firstName . " " . $lastName ?></p>
+                <p><strong>Date of Birth:</strong> <?= $dob ?></p>
+                <p><strong>Gender:</strong> <?= $gender ?></p>
+                <p><strong>Skills:</strong> <?= $skills ?></p>
+                <?php if (!empty($otherSkills)): ?>
+                    <p><strong>Other Skills:</strong> <?= $otherSkills ?></p>
+                <?php endif; ?><br>
+                <a href="apply.php" class="button primary">Submit Another Application</a>
+            </div>
+
+        <?php else: ?>
+            <h1>Submission Failed</h1>
+            <p>There was an issue saving your EOI. Please try again.</p>
+            <p>Error: <?= mysqli_error($conn) ?></p><br>
+            <a href="apply.php" class="button primary">Submit Another Application</a>
+        <?php endif; ?>
+
+    </main>
+    <?php include_once "footer.inc"; ?>
+</body>
