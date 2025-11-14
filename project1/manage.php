@@ -28,33 +28,34 @@ require_once 'settings.php';
         ?>
 
         <!-- List of all EOIS -->
-        <input type="checkbox" id="eoi1" class="collapsible-toggle">
-        <label for="eoi1" class="collapsible-label">List All EOIs</label>
-        <div class="collapsible-content">
-            <?php
-            $sql = "SELECT * FROM eoi";
-            $result = mysqli_query($dbconn, $sql);
+        <div class="collapsible-wrapper">
+            <input type="checkbox" id="eoi1" class="collapsible-toggle">
+            <label for="eoi1" class="collapsible-label">List All EOIs</label>
+            <div class="collapsible-content">
+                <?php
+                $sql = "SELECT * FROM eoi";
+                $result = mysqli_query($dbconn, $sql);
 
-            if ($result && mysqli_num_rows($result) > 0) {
-                echo "<table>";
-                echo "<tr><th>EOI Number</th><th>Job Ref</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Status</th></tr>";
+                if ($result && mysqli_num_rows($result) > 0) {
+                    echo "<table>";
+                    echo "<tr><th>EOI Number</th><th>Job Ref</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Status</th></tr>";
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['EOINumber']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['JobRef']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['Email']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['Status']) . "</td>";
-                    echo "</tr>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['EOINumber']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['JobRef']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Email']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Status']) . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "<p>No EOIs found.</p>";
                 }
-                echo "</table>";
-            } else {
-                echo "<p>No EOIs found.</p>";
-            }
-            ?>
-        </div>
+                ?>
+            </div>
         </div>
 
 
