@@ -65,7 +65,7 @@ require_once 'settings.php';
             <label for="eoi2" class="collapsible-label">List EOIs by Job Reference Number</label>
             <div class="collapsible-content">
                 <form method="post">
-                    <label>Job Reference:</label>
+                    <label class="collapse-title">Job Reference:</label>
                     <input type="text" name="search_jobref" required>
                     <button type="submit">Search</button>
                 </form>
@@ -76,7 +76,7 @@ require_once 'settings.php';
                     $sql = "SELECT * FROM eoi WHERE JobRef = '$jobref'";
                     $result = mysqli_query($dbconn, $sql);
 
-                    echo "<h3>Search Results:</h3>";
+                    echo "<h3 class='collapse-result'>Search Results:</h3>";
                     if ($result && mysqli_num_rows($result) > 0) {
                         echo "<table>";
                         echo "<tr><th>EOI Number</th><th>Name</th><th>Email</th><th>Status</th></tr>";
@@ -90,7 +90,7 @@ require_once 'settings.php';
                         }
                         echo "</table>";
                     } else {
-                        echo "<p>No results found for Job Ref: $jobref</p>";
+                        echo "<p class='collapse-result'>No results found for Job Ref: $jobref</p>";
                     }
                 }
                 ?>
@@ -104,10 +104,10 @@ require_once 'settings.php';
             <label for="eoi3" class="collapsible-label">Search EOIs by Applicant Name</label>
             <div class="collapsible-content">
                 <form method="post">
-                    <label>First Name:</label>
+                    <label class="collapse-title">First Name:</label>
                     <input type="text" name="fname">
 
-                    <label>Last Name:</label>
+                    <label class="collapse-title">Last Name:</label>
                     <input type="text" name="lname">
 
                     <button type="submit">Search</button>
@@ -125,7 +125,7 @@ require_once 'settings.php';
 
                     $result = mysqli_query($dbconn, $sql);
 
-                    echo "<h3>Search Results:</h3>";
+                    echo "<h3 class='collapse-result'>Search Results:</h3>";
                     if ($result && mysqli_num_rows($result) > 0) {
                         echo "<table>";
                         echo "<tr><th>EOI Number</th><th>Job Ref</th><th>Name</th><th>Email</th></tr>";
@@ -139,7 +139,7 @@ require_once 'settings.php';
                         }
                         echo "</table>";
                     } else {
-                        echo "<p>No matching applicants found.</p>";
+                        echo "<p class='collapse-result'>No matching applicants found.</p>";
                     }
                 }
                 ?>
@@ -153,7 +153,7 @@ require_once 'settings.php';
             <label for="eoi4" class="collapsible-label">Delete EOIs (By Job Reference)</label>
             <div class="collapsible-content">
                 <form method="post">
-                    <label>Job Reference to Delete:</label>
+                    <label class="collapse-title">Job Reference to Delete:</label>
                     <input type="text" name="delete_jobref" required>
                     <button type="submit">Delete</button>
                 </form>
@@ -164,7 +164,7 @@ require_once 'settings.php';
                     $sql = "DELETE FROM eoi WHERE JobRef = '$jobref'";
                     $delete_result = mysqli_query($dbconn, $sql);
 
-                    echo "<p>All EOIs with Job Reference <strong>$jobref</strong> have been deleted.</p>";
+                    echo "<p class='collapse-result'>All EOIs with Job Reference <strong>$jobref</strong> have been deleted.</p>";
                 }
                 ?>
             </div>
@@ -177,10 +177,10 @@ require_once 'settings.php';
             <label for="eoi5" class="collapsible-label">Change EOI Status</label>
             <div class="collapsible-content">
                 <form method="post">
-                    <label>EOI Number:</label>
+                    <label class="collapse-title">EOI Number:</label>
                     <input type="text" name="status_eoinumber" required>
 
-                    <label>New Status:</label>
+                    <label class="collapse-title">New Status:</label>
                     <select name="new_status" required>
                         <option value="New">New</option>
                         <option value="Reviewed">Reviewed</option>
@@ -199,7 +199,7 @@ require_once 'settings.php';
                     $sql = "UPDATE eoi SET Status = '$stat' WHERE EOINumber = '$num'";
                     mysqli_query($dbconn, $sql);
 
-                    echo "<p>Status for EOI <strong>$num</strong> successfully updated to <strong>$stat</strong>.</p>";
+                    echo "<p class='collapse-result'>Status for EOI <strong>$num</strong> successfully updated to <strong>$stat</strong>.</p>";
                 }
                 ?>
             </div>
