@@ -111,7 +111,7 @@ require_once 'settings.php';
                         elseif ($status === "Reviewed") $class = "status-reviewed";
                         elseif ($status === "Rejected") $class = "status-rejected";
                         elseif ($status === "Shortlisted") $class = "status-shortlisted";
-
+                        // Output row
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['EOINumber']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['JobRef']) . "</td>";
