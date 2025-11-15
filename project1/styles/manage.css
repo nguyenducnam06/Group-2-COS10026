@@ -75,11 +75,7 @@ table td {
 }
 
 table tr:nth-child(even) {
-  background: linear-gradient(
-    180deg,
-    rgba(166, 120, 240, 0.6),
-    rgba(215, 173, 226, 0.6)
-  );
+  background: hsla(89, 59%, 77%, 0.4);
 }
 
 table tr:hover {
