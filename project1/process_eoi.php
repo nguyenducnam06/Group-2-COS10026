@@ -44,7 +44,6 @@ $email = sanitize($_POST['email']);
 $phone = sanitize($_POST['phone']);
 $skills = isset($_POST['skills']) ? implode(", ", $_POST['skills']) : '';
 $otherSkills = sanitize($_POST['otherSkills']);
-$status = 'New Aplication';
 // --- re-Validate required fields ---
 $errors = [];
 
@@ -75,8 +74,8 @@ $EOINumber = generateEOINumber($conn);
 $applyDate = date("Y-m-d H:i:s");
 
 // --- Insert data into the table ---
-$sql = "INSERT INTO eoi (EOINumber, JobRef, FirstName, LastName, DateOfBirth, Gender, StreetAddress, Suburb, State, Postcode, Email, Phone, Skills, OtherSkills, ApplyDate, Status)
-        VALUES ('$EOINumber', '$jobRef', '$firstName', '$lastName', '$dob', '$gender', '$street', '$suburb', '$state', '$postcode', '$email', '$phone', '$skills', '$otherSkills', '$applyDate', '$status')";
+$sql = "INSERT INTO eoi (EOINumber, JobRef, FirstName, LastName, DateOfBirth, Gender, StreetAddress, Suburb, State, Postcode, Email, Phone, Skills, OtherSkills, ApplyDate)
+        VALUES ('$EOINumber', '$jobRef', '$firstName', '$lastName', '$dob', '$gender', '$street', '$suburb', '$state', '$postcode', '$email', '$phone', '$skills', '$otherSkills', '$applyDate')";
 
 $applySuccess = mysqli_query($conn, $sql);
 
