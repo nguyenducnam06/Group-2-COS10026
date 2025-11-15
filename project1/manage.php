@@ -67,7 +67,7 @@ require_once 'settings.php';
                 <form method="post">
                     <label class="collapse-title">Job Reference:</label>
                     <input type="text" name="search_jobref" required>
-                    <button type="submit">Search</button>
+                    <button class="primary" type="submit">Search</button>
                 </form>
 
                 <?php
@@ -110,7 +110,7 @@ require_once 'settings.php';
                     <label class="collapse-title">Last Name:</label>
                     <input type="text" name="lname">
 
-                    <button type="submit">Search</button>
+                    <button class="primary" type="submit">Search</button>
                 </form>
 
                 <?php
@@ -155,7 +155,7 @@ require_once 'settings.php';
                 <form method="post">
                     <label class="collapse-title">Job Reference to Delete:</label>
                     <input type="text" name="delete_jobref" required>
-                    <button type="submit">Delete</button>
+                    <button class="primary" type="submit">Delete</button>
                 </form>
 
                 <?php
@@ -188,7 +188,7 @@ require_once 'settings.php';
                         <option value="Rejected">Rejected</option>
                     </select>
 
-                    <button type="submit">Update</button>
+                    <button class="primary" type="submit">Update</button>
                 </form>
 
                 <?php
