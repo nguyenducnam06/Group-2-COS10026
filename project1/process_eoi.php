@@ -92,7 +92,7 @@ mysqli_close($conn);
         <?php if ($applySuccess): ?>
             <h1>Application Submitted Successfully</h1>
             <h3>Thank you, your EOI has been recorded.</h3>
-
+            <h4>EOI Number :  <?= $EOINumber ?></h4>
             <div>
                 <h2>Your Submitted Details</h2>
                 <p><strong>Job Reference:</strong> <?= $jobRef ?></p>

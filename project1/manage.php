@@ -5,6 +5,7 @@ if (!isset($_SESSION['userid'])) {
     header("Location: login.php");
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,20 @@ require_once 'settings.php';
                         echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['Email']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['Status']) . "</td>";
+                        //retrieve status from database for styling
+                        $status = $row['Status']; // retrieved from SQL
+                        //CSS class based on value
+                        $class = "";
+                        if ($status === "New Applicant") {
+                            $class = "status-new";
+                        } elseif ($status === "Reviewed") {
+                            $class = "status-reviewed";
+                        } elseif ($status === "Rejected") {
+                            $class = "status-rejected";
+                        } elseif ($status === "Shortlisted") {
+                            $class = "status-shortlisted";
+                        }
+                        echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -161,10 +175,23 @@ require_once 'settings.php';
                 <?php
                 if (isset($_POST['delete_jobref'])) {
                     $jobref = mysqli_real_escape_string($dbconn, $_POST['delete_jobref']);
-                    $sql = "DELETE FROM eoi WHERE JobRef = '$jobref'";
-                    $delete_result = mysqli_query($dbconn, $sql);
 
-                    echo "<p class='collapse-result'>All EOIs with Job Reference <strong>$jobref</strong> have been deleted.</p>";
+                    // delete from SQL
+                    $sql = "DELETE FROM eoi WHERE JobRef = '$jobref'";
+                    mysqli_query($dbconn, $sql);
+
+                    // check how many rows were deleted
+                    $rows_deleted = mysqli_affected_rows($dbconn);
+
+                    if ($rows_deleted > 0) {
+                        echo "<p class='collapse-result success'>
+                    Successfully deleted <strong class='collapse-result'>$rows_deleted</strong> EOI(s) with Job Reference 
+                    <strong class='collapse-result'>$jobref</strong>.</p>";
+                    } else {
+                        echo "<p class='collapse-result error'>
+                    No EOIs were found with Job Reference 
+                    <strong class='collapse-result'>$jobref</strong>.</p>";
+                    }
                 }
                 ?>
             </div>
@@ -181,8 +208,8 @@ require_once 'settings.php';
                     <input type="text" name="status_eoinumber" required>
 
                     <label class="collapse-title">New Status:</label>
-                    <select name="new_status" required>
-                        <option value="New">New</option>
+                    <select id="collapse-option" name="new_status" required>
+                        <option value="">--Set Status--</option>
                         <option value="Reviewed">Reviewed</option>
                         <option value="Shortlisted">Shortlisted</option>
                         <option value="Rejected">Rejected</option>
@@ -199,7 +226,7 @@ require_once 'settings.php';
                     $sql = "UPDATE eoi SET Status = '$stat' WHERE EOINumber = '$num'";
                     mysqli_query($dbconn, $sql);
 
-                    echo "<p class='collapse-result'>Status for EOI <strong>$num</strong> successfully updated to <strong>$stat</strong>.</p>";
+                    echo "<p class='collapse-result'>Status for EOI <strong class='collapse-result'>$num</strong> successfully updated to <strong class='collapse-result'>$stat</strong>.</p>";
                 }
                 ?>
             </div>

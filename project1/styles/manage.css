@@ -50,6 +50,40 @@
   color: rgb(37, 37, 42);
 }
 
+select option {
+    background: rgb(244, 200, 248);
+    color: black;
+}
+
+select option[value=""],.status-new {
+    color: #ffc012;
+    font-weight: bold;
+}
+
+select option[value="Reviewed"],.status-reviewed {
+    color: #0a5b0a;
+    font-weight: bold;
+}
+
+select option[value="Rejected"],.status-rejected {
+    color: #7a0000;
+    font-weight: bold;
+}
+
+select option[value="Shortlisted"],.status-shortlisted {
+    color: #31a3ff;
+    font-weight: bold;
+}
+
+input {
+      background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
+      color: rgb(37, 37, 42);
+}
+
+#collapse-option {
+      background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
+      color: rgb(37, 37, 42);
+}
 /* Table Styling */
 table {
   width: 100%;
