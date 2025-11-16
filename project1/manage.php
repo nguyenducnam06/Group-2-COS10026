@@ -332,6 +332,8 @@ require_once 'settings.php';
             <div class="collapsible-content">
                 <form method="post">
                     <input type="hidden" name="section" value="eoi5">
+                    <label class="collapse-title">EOI Number:</label>
+                    <input type="text" name="status_eoinumber" required>
                     <label class="collapse-title">New Status:</label>
                     <select id="collapse-option" name="new_status" required>
                         <option value="">--Set Status--</option>
