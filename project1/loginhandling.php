@@ -20,7 +20,7 @@ $result = $stmt->get_result();
 $user = mysqli_fetch_assoc($result);
 
 if (!$result) {
-    echo "Query failed: " . mysqli_error($conn);
+    echo "Query failed: " . mysqli_error($dbconn);
 }
 
 if ($user && password_verify($password, $user['Password'])) {
@@ -28,6 +28,8 @@ if ($user && password_verify($password, $user['Password'])) {
     $_SESSION['userid'] = $user['UserID'];
     $_SESSION['username'] = $user['Username'];
     $_SESSION['displayname'] = $user['DisplayName'];
+    $_SESSION['role'] = $user['Role'];
+
 
     mysqli_stmt_close($stmt);
     mysqli_close($dbconn);

@@ -207,7 +207,7 @@ mysqli_close($dbconn);
             <br>
             <div class="button_row">
                 <button type="submit" value="Submit Application" class="primary">
-                    Submit Apply Form
+                    Apply
                 </button>
                 <button type="reset" value="Reset Form" class="secondary">
                     Reset Form

@@ -23,7 +23,8 @@ require_once 'settings.php';
 <body>
     <?php include 'header.inc'; ?>
     <main>
-        <h1>Welcome to the Manage Page, <?php echo htmlspecialchars($_SESSION['displayname']); ?>!</h1>
+        <h1>Logged in as <?php echo htmlspecialchars($_SESSION['displayname']); ?>  (<?php echo htmlspecialchars(($_SESSION['role'])) ?>)</h1>
+        <h2>Welcome To The Manage Page!</h2>
         <?php
         $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
@@ -119,19 +120,29 @@ require_once 'settings.php';
                         "</a>
                 </th>
 
+                <th>Date Of Birth</th>
+
+                <th>Gender</th>
+
+                <th>Address</th>
+
+                <th>Postcode</th>
+
                 <th>Email</th>
 
-                <th>
-                    <a href='?section=eoi1&sort=Status&dir=$nextDir'>Status"
-                        . sortArrow('Status', $sortColumn, $sortDir) .
-                        "</a>
-                </th>
+                <th>Phone</th>
 
                 <th>Skills</th>
 
                 <th>
                     <a href='?section=eoi1&sort=ApplyDate&dir=$nextDir'>Apply Date"
                         . sortArrow('ApplyDate', $sortColumn, $sortDir) .
+                        "</a>
+                </th>
+                
+                <th>
+                    <a href='?section=eoi1&sort=Status&dir=$nextDir'>Status"
+                        . sortArrow('Status', $sortColumn, $sortDir) .
                         "</a>
                 </th>
             </tr>";
@@ -152,10 +163,15 @@ require_once 'settings.php';
                         echo "<td>" . htmlspecialchars($row['JobRef']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['DateOfBirth']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Gender']) . "</td>";
+                        echo "<td>" . $row['StreetAddress'] . ", " . $row['Suburb'] . ", " . $row['State'] . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Postcode']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['Email']) . "</td>";
-                        echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['Skills']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['Phone']) . "</td>";
+                        echo "<td>" . $row['Skills'] . ", " . $row['OtherSkills'] . "</td>";
                         echo "<td>" . htmlspecialchars($row['ApplyDate']) . "</td>";
+                        echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
                         echo "</tr>";
                     }
 
@@ -206,13 +222,23 @@ require_once 'settings.php';
                     echo "<h3 class='collapse-result'>Search Results:</h3>";
                     if ($result && mysqli_num_rows($result) > 0) {
                         echo "<table>";
-                        echo "<tr><th>EOI Number</th><th>Name</th><th>Email</th><th>Status</th></tr>";
+                        echo "<tr><th>EOI Number</th><th>First Name</th><th>Last Name</th><th>Date Of Birth</th><th>Gender</th><th>Address</th><th>Postcode</th><th>Email</th><th>Phone</th><th>Skills</th><th>Apply Date</th><th>Status</th></tr>";
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
-                            echo "<td>" . $row['EOINumber'] . "</td>";
-                            echo "<td>" . $row['FirstName'] . " " . $row['LastName'] . "</td>";
-                            echo "<td>" . $row['Email'] . "</td>";
-                            //retrieve status from database for styling
+                            echo "<td>" . htmlspecialchars($row['EOINumber']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['DateOfBirth']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['Gender']) . "</td>";
+                            echo "<td>" . $row['StreetAddress'] . ", " . $row['Suburb'] . ", " . $row['State'] . "</td>";
+                            echo "<td>" . htmlspecialchars($row['Postcode']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['Email']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['Phone']) . "</td>";
+                            echo "<td>" . $row['Skills'] . ", " . $row['OtherSkills'] . "</td>";
+                            echo "<td>" . htmlspecialchars($row['ApplyDate']) . "</td>";
+                            echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
+                            echo "</tr>";
+                             //retrieve status from database for styling
                             $status = $row['Status']; // retrieved from SQL
                             //CSS class based on value
                             $class = "";
@@ -225,8 +251,6 @@ require_once 'settings.php';
                             } elseif ($status === "Shortlisted") {
                                 $class = "status-shortlisted";
                             }
-                            echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
-                            echo "</tr>";
                         }
                         echo "</table>";
                     } else {
@@ -269,14 +293,37 @@ require_once 'settings.php';
                     echo "<h3 class='collapse-result'>Search Results:</h3>";
                     if ($result && mysqli_num_rows($result) > 0) {
                         echo "<table>";
-                        echo "<tr><th>EOI Number</th><th>Job Ref</th><th>Name</th><th>Email</th></tr>";
+                        echo "<tr><th>Name</th><th>EOI Number</th><th>Job Ref</th><th>Date Of Birth</th><th>Gender</th><th>Address</th><th>Postcode</th><th>Email</th><th>Phone</th><th>Skills</th><th>Apply Date</th><th>Status</th></tr>";
+                        
+                        
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
+                            echo "<td>" . $row['FirstName'] . " " . $row['LastName'] . "</td>";
                             echo "<td>" . $row['EOINumber'] . "</td>";
                             echo "<td>" . $row['JobRef'] . "</td>";
-                            echo "<td>" . $row['FirstName'] . " " . $row['LastName'] . "</td>";
+                            echo "<td>" . $row['DateOfBirth'] . "</td>";
+                            echo "<td>" . $row['Gender'] . "</td>";
+                            echo "<td>" . $row['StreetAddress'] . ", " . $row['Suburb'] . ", " . $row['State'] . "</td>";
+                            echo "<td>" . $row['Postcode'] . "</td>";
                             echo "<td>" . $row['Email'] . "</td>";
+                            echo "<td>" . $row['Phone'] . "</td>";
+                            echo "<td>" . $row['Skills'] . ", " . $row['OtherSkills'] . "</td>";
+                            echo "<td>" . $row['ApplyDate'] . "</td>";
+                            echo "<td class='$class'>" . htmlspecialchars($row['Status']) . "</td>";
                             echo "</tr>";
+                            //retrieve status from database for styling
+                            $status = $row['Status']; // retrieved from SQL
+                            //CSS class based on value
+                            $class = "";
+                            if ($status === "New Applicant") {
+                                $class = "status-new";
+                            } elseif ($status === "Reviewed") {
+                                $class = "status-reviewed";
+                            } elseif ($status === "Rejected") {
+                                $class = "status-rejected";
+                            } elseif ($status === "Shortlisted") {
+                                $class = "status-shortlisted";
+                            }
                         }
                         echo "</table>";
                     } else {

@@ -1,6 +1,6 @@
 /* Collapsible Section Styling */
 .collapsible-wrapper {
-  margin-top: 20px;
+  margin-top: 12px;
   width: 100%;
 }
 
@@ -15,11 +15,11 @@
     rgba(145, 86, 241, 0.5),
     rgba(212, 163, 226, 0.5)
   );
-  color: rgb(249, 248, 248);
+  color: #f9f8f8;
   padding: 14px 18px;
   font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 24px;
   font-weight: bold;
 }
 
@@ -36,8 +36,7 @@
   overflow: hidden;
   transition: max-height 0.4s ease;
   background: #f5f5f5;
-  padding: 0 15px;
-  border-radius: 0 0 6px 6px;
+  border-radius: 12px;
 }
 
 .collapsible-toggle:checked + .collapsible-label + .collapsible-content {
@@ -51,63 +50,56 @@
 }
 
 /* Styling for displaying status of EOIs in table */
-select option {
-    background: rgb(244, 200, 248);
-    color: black;
+
+select option[value=""],
+.status-new {
+  color: #fc0;
+  font-weight: bold;
 }
 
-select option[value=""],.status-new {
-    color: #ffc012;
-    font-weight: bold;
+select option[value="Reviewed"],
+.status-reviewed {
+  color: #34c759;
 }
 
-select option[value="Reviewed"],.status-reviewed {
-    color: #0a5b0a;
-    font-weight: bold;
+select option[value="Rejected"],
+.status-rejected {
+  color: #ff3b30;
+  font-weight: bold;
 }
 
-select option[value="Rejected"],.status-rejected {
-    color: #7a0000;
-    font-weight: bold;
-}
-
-select option[value="Shortlisted"],.status-shortlisted {
-    color: #31a3ff;
-    font-weight: bold;
+select option[value="Shortlisted"],
+.status-shortlisted {
+  color: #5856d6;
+  font-weight: bold;
 }
 
 input {
-      background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
-      color: rgb(37, 37, 42);
+  background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
+  color: rgb(37, 37, 42);
 }
 
 #collapse-option {
-      background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
-      color: rgb(37, 37, 42);
+  background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
+  color: rgb(37, 37, 42);
 }
-
 
 /* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  font-size: 10px;
 }
 
 table th {
-  background: linear-gradient(
-    180deg,
-    rgba(145, 86, 241, 0.5),
-    rgba(212, 163, 226, 0.5)
-  );
-  color: white;
+  background: #863db3;
+  color: #fcfcfc;
   text-align: left;
-  padding: 10px;
+  padding: 8px;
 }
 
 table td {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 8px;
   color: rgb(37, 37, 42);
 }
 
@@ -120,13 +112,15 @@ table tr:hover {
 }
 
 /* Styling previous / next page button */
-#prev-page, #next-page {
+#prev-page,
+#next-page {
   margin-top: 24px;
   background: linear-gradient(45deg, #9156f1, #9156f1);
   border: none;
   float: right;
 }
-#prev-page:hover, #next-page:hover {
+#prev-page:hover,
+#next-page:hover {
   background: linear-gradient(45deg, #d4a3e2, #9156f1);
   box-shadow: 5px 0px 50px #9156f1ab, -5px 0px 50px #d4a3e2a5;
 }

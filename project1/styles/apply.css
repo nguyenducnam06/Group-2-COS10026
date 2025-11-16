@@ -29,19 +29,9 @@
   margin-bottom: 15px;
 }
 
-#jobRef option {
-  color: #ece9e7;
-  background: #6c00b452;
-}
-
 #state {
   color: #ece9e7;
   background: linear-gradient(140deg, #b356f152, #c6e7a32d);
-}
-
-#state option {
-  color: #ece9e7;
-  background: #6c00b452;
 }
 
 fieldset {

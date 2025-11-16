@@ -37,9 +37,7 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 <h1>Bring Your Vision<br>To Life</h1>
                 <p>Explores your potentials <br>Find your desired career, bring your vision to life with
                     NetVision.<br>Becoming a part of the leading network company. Apply now!</p>
-                <div class="row">
-                    <a class="primary" href="apply.php">Apply Now</a>
-                </div>
+                <a class="primary" href="apply.php">Apply Now</a>
             </article>
         </section>
 

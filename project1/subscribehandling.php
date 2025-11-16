@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("settings.php");
-mysqli_report(MYSQLI_REPORT_OFF);
+mysqli_report(flags: MYSQLI_REPORT_OFF);
 $dbconn = mysqli_connect($host, $user, $pwd, $sql_db);
 
 if (!$dbconn) {

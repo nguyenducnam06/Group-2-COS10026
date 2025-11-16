@@ -6,8 +6,9 @@ main {
   align-items: center;
   padding: 24px;
   min-height: 100vh;
+  min-width: 80vw;
 }
 
 .logo {
-  max-width: 100px;
+  max-width: 50px;
 }
