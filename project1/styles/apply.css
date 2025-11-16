@@ -1,4 +1,12 @@
+/* File: project1/styles/apply.css
+  Purpose: Styles for the application form and related UI elements.
+*/
+/* -------------------------
+   Application form: headings & helpers
+   - Small section comments explain role of each block used on the apply page.
+*/
 .applytitle {
+  /* Page title for Apply page (large centered heading). */
   text-align: center;
   color: #ece9e7;
   margin-top: 40px;
@@ -14,15 +22,24 @@
 ::placeholder {
   color: #cecece;
   opacity: 1;
+  /* Placeholder guidance:
+     - Keep placeholder text brief and not a replacement for labels.
+     - Ensure the placeholder colour is not used as the only way to convey
+       required vs optional fields.
+  */
 }
 
 .formtitle {
+  /* Subheading used above each form section. */
   text-align: center;
   color: #ece9e7;
   margin-bottom: 12px;
 }
 
 #jobRef {
+  /* Read-only or highlighted job reference field
+     - Uses same background as other inputs to appear consistent.
+  */
   color: #ece9e7;
   background: linear-gradient(140deg, #b356f152, #c6e7a32d);
   width: 100%;
@@ -35,6 +52,9 @@
 }
 
 fieldset {
+  /* Fieldset grouping
+     - Provides a subtle boxed grouping for related inputs (e.g., contact details).
+  */
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px;
@@ -44,6 +64,9 @@ fieldset {
 }
 
 textarea {
+  /* Multi-line textareas
+     - Larger white background to aid readability for user-entered long text.
+  */
   width: 100%;
   min-height: 100px;
   padding: 12px;
@@ -85,6 +108,9 @@ textarea {
 }
 
 .section {
+  /* Form section wrapper
+     - Fixed width panel with gradient background used to group related controls.
+  */
   width: 50vw;
   margin: 0 auto;
   margin-bottom: 24px;
@@ -99,6 +125,9 @@ textarea {
 }
 
 #applicationForm {
+  /* The main form container
+     - Centers the form and gives it a subtle inset border and gradient background.
+  */
   width: 60vw;
   margin: 0 auto;
   margin-bottom: 24px;

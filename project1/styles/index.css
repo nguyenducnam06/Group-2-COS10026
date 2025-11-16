@@ -1,3 +1,11 @@
+/* File: project1/styles/index.css
+   Purpose: Styles for the homepage (intro, visual decorations, timeline).
+*/
+
+/* Homepage intro
+  - Decorative hero-like intro panel using multiple positioned images for visual depth.
+  - Uses asymmetric rounded corners to blend into the page layout.
+*/
 .intro {
   background: linear-gradient(230deg, #c6e7a3a0, #b268c699);
   padding: 24px;
@@ -15,6 +23,12 @@
 .intro_img img {
   position: absolute;
   z-index: 0;
+  /* Decorative positioned images
+     - These are purely decorative layers; ensure `alt=""` or aria-hidden
+       on the image elements so assistive tech ignores them.
+     - Use `position: absolute` carefully — on small screens these may overlap
+       important content, so prefer media queries to scale/stack them.
+  */
 }
 
 .intro_img1 {
@@ -47,6 +61,10 @@
 }
 
 .vision_background {
+  /* Vision/background panel
+     - Complementary block to the intro used for mission/vision text.
+     - Negative margins allow it to visually overlap the intro area.
+  */
   padding: 24px;
   background: linear-gradient(50deg, #c6e7a352, rgba(148, 62, 219, 0.4));
   margin-left: -48px;
@@ -55,9 +73,15 @@
   border: 1px solid #ece9e7;
   border-left: 0;
   box-shadow: 0px 12px 100px #090310ad;
+  /* Vision/background notes:
+     - This element intentionally overlaps the intro to create visual depth.
+     - Avoid placing interactive elements in the overlap region where they
+       might be clipped on smaller screens.
+  */
 }
 
 .form {
+  /* Small inline form row used on the homepage for quick actions (newsletter, search). */
   display: flex;
   gap: 16px;
   width: 100%;

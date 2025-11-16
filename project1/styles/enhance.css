@@ -1,4 +1,8 @@
 /* --- Enhancements page layout --- */
+/* Enhancements intro block
+  - Left-aligned decorative panel for the enhancements page with rounded corners.
+  - Matches the site visual language (gradients and soft shadows).
+*/
 .enhancement_intro {
   background: linear-gradient(230deg, #c6e7a3a0, #b268c699);
   padding: 24px;
@@ -10,6 +14,12 @@
   border: 1px solid #ece9e7;
   border-right: 0;
   box-shadow: 0px 12px 100px #090310ad;
+  /* Enhancement intro notes:
+     - Designed to sit alongside content with rounded left corners to create
+       a distinctive card-like look. Keep spacing consistent with site.
+     - If vertical stacking is needed on mobile, switch to full-width via
+       a media query and remove negative margins.
+  */
 }
 
 #enhancements section {

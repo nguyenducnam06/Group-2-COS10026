@@ -1,3 +1,4 @@
+<!-- End the session to log out-->
 <?php
 session_start();
 session_unset();

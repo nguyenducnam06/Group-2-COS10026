@@ -1,14 +1,35 @@
+/* File: project1/styles/manage.css
+   Purpose: Page-specific styles for the "manage" admin view.
+   - Controls collapsible UI used to view and filter EOIs (expressions of interest).
+   - Provides colour-coded status styling for EOIs and table/pagination layout.
+*/
 /* Collapsible Section Styling */
+/* Collapsible controls
+   - `.collapsible-wrapper` wraps a toggle input and associated label/content.
+   - The pattern uses a hidden checkbox (`.collapsible-toggle`) + sibling combinators
+     so no JS is required to open/close content.
+*/
 .collapsible-wrapper {
   margin-top: 12px;
   width: 100%;
+  /* Notes:
+     - Place the hidden checkbox input as the first child inside this wrapper
+       and use a sibling label + content structure so keyboard users can
+       toggle the section by focusing+pressing Enter/Space on the label.
+     - Keep content markup simple to avoid complex specificity in CSS.
+  */
 }
 
 .collapsible-toggle {
+  /* Hidden checkbox used to track open/closed state for the collapsible block. */
   display: none;
 }
 
 .collapsible-label {
+  /* Collapsible label / trigger
+     - Styled as a rounded pill so it looks like a button but is actually a label.
+     - When the related checkbox is checked, the adjacent content expands.
+  */
   display: block;
   background: linear-gradient(
     180deg,
@@ -21,6 +42,13 @@
   cursor: pointer;
   border-radius: 24px;
   font-weight: bold;
+  /* Important accessibility note:
+     - Use a real <label for="..."> tied to the checkbox so that clicking
+       or keyboard-activating the label toggles the checkbox state.
+     - Provide an explicit aria-expanded attribute dynamically from server
+       or JS if available to improve screen reader feedback; when purely
+       CSS-driven this attribute won't update automatically.
+  */
 }
 
 .collapsible-toggle:checked + .collapsible-label {
@@ -32,11 +60,20 @@
 }
 
 .collapsible-content {
+  /* Collapsible content
+     - Starts collapsed (max-height:0) and transitions to a large max-height
+       when the toggle is checked. Keep padding & overflow handled for smooth animation.
+  */
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
   background: #f5f5f5;
   border-radius: 12px;
+  /* When collapsed the content is hidden via max-height:0. If content
+     includes images or large blocks, ensure overflow handling is correct
+     so the transition remains smooth. Consider aria-hidden toggling when
+     using JS for better accessibility.
+  */
 }
 
 .collapsible-toggle:checked + .collapsible-label + .collapsible-content {
@@ -46,10 +83,16 @@
 
 .collapse-title,
 .collapse-result {
+  /* Inner text colours used inside collapsed panels (dark text on light background). */
   color: rgb(37, 37, 42);
 }
 
 /* Styling for displaying status of EOIs in table */
+
+/* EOI status colouring
+  - CSS classes mirror application status values so rows/options can match meaning.
+  - Use both select option selectors and utility classes to ensure consistent colour.
+*/
 
 select option[value=""],
 .status-new {
@@ -72,11 +115,20 @@ select option[value="Shortlisted"],
 .status-shortlisted {
   color: #5856d6;
   font-weight: bold;
+  /* Shortlisted uses purple to match site primary hue. Avoid relying on
+     color alone when displaying status — include text labels or icons too.
+  */
 }
 
 input {
+  /* Generic inputs inside manage page
+     - Slight gradient helps inputs remain legible inside the management UI.
+  */
   background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
   color: rgb(37, 37, 42);
+  /* Avoid using transparent text inside inputs; ensure text contrast >= WCAG
+     minimum. If inputs appear on very light backgrounds, adjust text color.
+  */
 }
 
 #collapse-option {
@@ -85,6 +137,10 @@ input {
 }
 
 /* Table Styling */
+/* Tables
+  - Compact table used to list EOIs. Small font-size keeps many rows visible.
+  - Alternate row background and hover state improve row legibility.
+*/
 table {
   width: 100%;
   border-collapse: collapse;

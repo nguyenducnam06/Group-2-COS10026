@@ -1,3 +1,12 @@
+/* File: project1/styles/style.css
+  Purpose: Global site styles (typography, layout primitives, utilities).
+  Notes: Applied across pages; keep changes minimal to avoid breaking components.
+*/
+/* -------------------------
+   Base / Reset & Typography
+   - Sets default font stack, base text colour and box-sizing.
+   - Global transition applied for subtle UI motion across components.
+*/
 * {
   font-family: "DM Sans", Tahoma, Geneva, Verdana, sans-serif, "Gill Sans MT",
     Calibri, "Trebuchet MS", sans-serif, sans-serif;
@@ -10,6 +19,12 @@
 }
 
 body {
+  /* Body
+     - Uses a fixed gradient background to create a consistent site backdrop.
+     - Keep background-attachment fixed for desktop, but mobile browsers may
+       override this for performance; avoid placing critical content that
+       depends on background position.
+  */
   background: linear-gradient(180deg, rgb(32, 30, 75), rgb(20, 19, 33));
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -52,6 +67,13 @@ p {
 }
 
 header {
+  /* Header
+     - Sticky top navigation bar with translucent gradient and backdrop blur.
+     - z-index ensures header stays above page content during scroll.
+     Accessibility & responsiveness:
+     - Ensure header links have focus styles (handled by default focus outline)
+       and that the header doesn't overlap content on small screens.
+  */
   position: sticky;
   top: 0;
   z-index: 10;
@@ -74,6 +96,12 @@ header {
 }
 
 footer {
+  /* Footer
+     - Large padded footer area matching header gradient; sits at page bottom.
+     Notes:
+     - Keep essential links visible here; avoid embedding large interactive
+       widgets that could be hard to reach on smaller devices.
+  */
   background: linear-gradient(
     160deg,
     rgba(145, 86, 241, 0.5),
@@ -84,6 +112,9 @@ footer {
 }
 
 main {
+  /* Main content wrapper
+     - Provides page-level spacing; individual pages add their own internal margins.
+  */
   margin: 48px;
   margin-top: 24px;
 }
@@ -93,6 +124,14 @@ section {
 }
 
 .input_with_button {
+  /* Input + button group
+     - Common pattern used in search bars and short forms across the site.
+     - Uses flex so the input grows and the button retains its size.
+     - Accessibility: keep the submit button after the input in DOM order so
+       screen readers read label/input then button.
+     - Responsive: at narrow widths consider wrapping the button under the
+       input or make the button full-width for easier tapping.
+  */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -107,6 +146,12 @@ section {
 
 input,
 select {
+  /* Form controls (inputs & selects)
+     - Rounded pills with subtle gradient background to match site theme.
+     - Border color chosen to remain visible on both light and dark backgrounds.
+     - Prefer explicit contrast for text inside inputs; keep placeholder light
+       but ensure readable contrast with actual entered text.
+  */
   border-radius: 100px;
   border: 1px solid #ece9e7;
   background: linear-gradient(140deg, #b356f152, #c6e7a32d);
@@ -133,6 +178,10 @@ select:focus {
 }
 
 nav {
+  /* Navigation layout
+    - Flexible row that wraps on small screens; items are evenly spaced.
+    - Keep link targets large enough (>=44px) for touch; use gap to space items.
+  */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -169,6 +218,12 @@ footer a:hover {
 button,
 a.primary,
 a.secondary {
+  /* Buttons and CTA styles
+     - Primary buttons use purple gradient; secondary are pale green tone.
+     - Shared rounded shape provides consistent touch target across UI.
+     - Accessibility: use semantic <button> where actions are required and
+       anchors (`a.primary`) for navigation. Ensure :focus states are visible.
+  */
   border-radius: 50px;
   padding: 12px 24px;
   cursor: pointer;
@@ -218,6 +273,11 @@ a.secondary:hover {
 .left_aligned,
 .right_aligned,
 .center_aligned {
+  /* Utility layout blocks
+     - Left/right/center aligned containers with consistent spacing and max width.
+     - These helpers are for layout composition on pages — prefer using
+       grid/flex utilities instead of duplicating styles in components.
+  */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -246,6 +306,12 @@ a.secondary:hover {
 }
 
 .card {
+  /* Card component
+     - Reusable elevated panel used for hero cards, job cards and other highlights.
+     - Uses gradient + subtle blur to maintain visual depth across the site.
+     - Note: ensure images inside `.card > img` include meaningful alt text
+       (or are decorative and marked aria-hidden) to avoid screen reader noise.
+  */
   position: relative;
   border: 1px solid #ece9e7;
   box-shadow: 0px 12px 100px #090310ad;
@@ -288,6 +354,12 @@ a.secondary:hover {
 }
 
 .number {
+  /* Circular number badge
+     - Decorative numeric badge used in contribution lists and highlights.
+     - Keep numeric font-size large enough and provide sufficient contrast.
+     - Avoid relying on color alone to convey meaning for users with
+       colour-vision deficiencies.
+  */
   background: linear-gradient(60deg, rgb(145, 86, 241), rgb(212, 163, 226));
   border-radius: 50%;
   display: flex;
@@ -303,6 +375,10 @@ a.secondary:hover {
 }
 
 .content_background {
+  /* Small flexible background container
+    - Used to wrap small content blocks with a subtle gradient background.
+    - Useful for small badges or meta information; keep padding consistent.
+  */
   display: flex;
   background: linear-gradient(50deg, #943edb66, #c6e7a352);
   border: 1px solid #ece9e7;
@@ -314,6 +390,10 @@ a.secondary:hover {
 }
 
 #back {
+  /* Floating back-to-top button
+    - Fixed positioned circular button in bottom-right corner for easy access.
+    - Ensure it does not overlap essential controls on smaller screens.
+  */
   position: fixed;
   z-index: 9;
   bottom: 24px;

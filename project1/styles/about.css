@@ -1,3 +1,7 @@
+/* File: project1/styles/about.css
+   Purpose: Styles for the About page and group information sections.
+   - Contribution blocks, member lists, and responsive adjustments.
+*/
 .about_intro {
   display: flex;
   padding: 48px;
@@ -20,6 +24,12 @@
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  /* Image behavior:
+     - Fixed pixel size keeps the hero image consistent; consider switching to
+       max-width for better responsiveness on small viewports.
+     - `object-fit: cover` ensures the important part of the image remains
+       visible while filling the box.
+  */
 }
 .about_intro img:hover {
   transform: scale(1.05) rotate(2deg);
@@ -33,6 +43,10 @@
 }
 
 .group-info {
+  /* Group info container
+     - Central column used for group summary and member info.
+     - Large radius and background to separate it visually on the page.
+  */
   max-width: 1200px;
   margin: 40px auto;
   padding: 48px;
@@ -43,6 +57,9 @@
   align-items: center;
 }
 .info-box {
+  /* Info-box row
+     - Reusable horizontal info block with paddings and hover transform.
+  */
   display: flex;
   justify-content: space-around;
   gap: 30px;
@@ -88,6 +105,9 @@
 }
 
 .task {
+  /* Contribution / task list wrapper
+     - Uses CSS counter to number each contribution card automatically.
+  */
   counter-reset: member;
   max-width: 1200px;
   margin: 3rem auto;
@@ -99,8 +119,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  }
+}
 .contribution {
+  /* Single contribution card
+     - Slight elevation and rounded corners; ::before shows an auto-incremented number.
+  */
   margin-top: 24px;
   counter-increment: member;
   background: rgba(255, 255, 255, 0.02);
@@ -131,13 +154,21 @@
   font-size: 40px;
   font-weight: 700;
   box-shadow: 10px 10px 50px #9156f161, -10px 0px 50px #d4a3e298;
+  /* Number badge accessibility:
+     - The numeric counter is decorative; if it conveys order that matters,
+       ensure the HTML also includes semantic ordering (ol/li) for screen readers.
+  */
 }
 .contribution h3 {
   margin-top: 50px;
   font-size: 1.4rem;
   font-weight: 700;
   color: #c7e7a4;
-  }
+  /* Heading notes:
+     - Use a semantic heading level (h3 here) in the HTML to maintain document
+       structure and enable assistive tech to navigate sections.
+  */
+}
 .contribution ul {
   list-style: none;
   padding: 12px;
@@ -155,6 +186,9 @@
   }
 }
 .interests {
+  /* Interests section
+     - Contains hobby tags and a lightweight table of interests for members.
+  */
   max-width: 1200px;
   margin: 3rem auto;
   padding: 3rem 2rem;

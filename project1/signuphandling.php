@@ -16,6 +16,7 @@ $username = trim( $_POST['username']);
 $rawpassword = trim($_POST['password']);
 $confirmpassword = trim($_POST['confirmpassword']);
 
+// Check 2 passwords if they match
 if ($rawpassword !== $confirm_password) {
     $_SESSION['signup'] = 'unmatch';
     header("Location: signup.php");

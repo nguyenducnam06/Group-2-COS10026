@@ -1,7 +1,14 @@
-/* Style sheet for job description page */
+/* File: project1/styles/jobs.css
+  Purpose: Styles for the jobs listing and job detail pages.
+  - Card layout for job previews and a two-column detail view for job posts.
+*/
 
 /* Styling for top section */
 .jobs_intro {
+  /* Top intro area for a job listing
+    - Typically contains a media element (image/video) and summary text.
+    - Designed to be responsive; media scales to available space.
+  */
   display: flex;
   flex-direction: row;
   gap: 24px;
@@ -21,7 +28,11 @@
   object-fit: cover;
   flex: 1;
   border-radius: 20px;
-  prefers-reduced-motion: reduce;
+  /* Motion preference:
+     - The `prefers-reduced-motion` rule should be applied using a media
+       query: `@media (prefers-reduced-motion: reduce) { ... }` — keep the
+       media element lightweight and avoid autoplay when users prefer reduced motion.
+  */
 }
 @media (max-width: 768px) {
   .jobs_intro {
@@ -50,6 +61,10 @@
 }
 
 .job_card {
+  /* Job card (preview)
+     - Compact preview card used on the listings page. Includes image, title and short details.
+     - Uses clamp() to keep cards responsive between min and max widths.
+  */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -120,6 +135,10 @@
 
 /* Styling for job details section */
 .job_details {
+  /* Job detail layout
+     - Primary article column with a sidebar for meta information (3fr / 1.5fr).
+     - Uses grid for consistent alignment of lists and callouts.
+  */
   margin-top: 24px;
   display: grid;
   grid-template-columns: 3fr 1.5fr;
