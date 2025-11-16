@@ -14,6 +14,14 @@ $role = trim($_POST["role"]);
 $displayname = trim($_POST["displayname"]);
 $username = trim( $_POST['username']);
 $rawpassword = trim($_POST['password']);
+$confirmpassword = trim($_POST['confirmpassword']);
+
+if ($rawpassword !== $confirm_password) {
+    $_SESSION['signup'] = 'unmatch';
+    header("Location: signup.php");
+    exit();
+}
+
 $hashed_password = password_hash($rawpassword, PASSWORD_DEFAULT);
 
 // SQL query

@@ -36,10 +36,15 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                     <input id="adminusername" type="text" name="username" pattern="[a-z0-9]+" title="Enter your username" placeholder="username123" required>
                     <label for="adminpassword">Password</label>
                     <input id="adminpassword" type="password" name="password" title="Enter your password" placeholder="xxxxxxxx" required> 
+                    <label for="confirmadminpassword">Confirm Your Password</label>
+                    <input id="confirmadminpassword" type="password" name="confirmpassword" title="Confirm your password" placeholder="xxxxxxxx" required> 
+                    
                     <?php 
                         if (isset($_SESSION['signup'])) {
                             if ($_SESSION['signup'] == 'existed') {
                                 echo '<h5>This username already exists, please enter another username</h5>';
+                            } else if ($_SESSION['signup'] == 'unmatch') {
+                                echo '<h5>The confirm password does not match, please check again</h5>';
                             } else {
                                 echo '<h5>Oops! There was an error, please try again latter</h5>';
                             }
