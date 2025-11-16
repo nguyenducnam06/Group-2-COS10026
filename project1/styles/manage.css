@@ -119,13 +119,14 @@ table tr:hover {
   background-color: #e0e0e0;
 }
 
+/* Styling previous / next page button */
 #prev-page, #next-page {
   margin-top: 24px;
-
-}
-#prev-page {
- float: left;
-}
-#next-page {
+  background: linear-gradient(45deg, #9156f1, #9156f1);
+  border: none;
   float: right;
+}
+#prev-page:hover, #next-page:hover {
+  background: linear-gradient(45deg, #d4a3e2, #9156f1);
+  box-shadow: 5px 0px 50px #9156f1ab, -5px 0px 50px #d4a3e2a5;
 }

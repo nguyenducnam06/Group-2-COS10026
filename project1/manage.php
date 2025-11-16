@@ -164,16 +164,16 @@ require_once 'settings.php';
                     if ($totalPages > 1) {
                         echo "<div class='pagination'>";
                         // Move to previous page button
-                        if ($page > 1) {
-                            echo "<Button class=\"secondary\" id=\"prev-page\"><a href='?section=eoi1&page=" . ($page - 1) . "&sort=$sortColumn&dir=$sortDir'>&laquo; Previous</a></Button>";
+                        // Move to next page button
+                        if ($page < $totalPages) {
+                            echo "<Button class=\"secondary\" id=\"next-page\"><a href='?section=eoi1&page=" . ($page + 1) . "&sort=$sortColumn&dir=$sortDir'>Next &raquo;</a></Button>";
                         }
                         for ($i = 1; $i <= $totalPages; $i++) {
                             $activeClass = ($i === $page) ? "class='active-page'" : "";
                             echo "<a href='?section=eoi1&page=$i&sort=$sortColumn&dir=$sortDir' $activeClass>$i</a>";
                         }
-                        // Move to next page button
-                        if ($page < $totalPages) {
-                            echo "<Button class=\"secondary\" id=\"next-page\"><a href='?section=eoi1&page=" . ($page + 1) . "&sort=$sortColumn&dir=$sortDir'>Next &raquo;</a></Button>";
+                        if ($page > 1) {
+                            echo "<Button class=\"secondary\" id=\"prev-page\"><a href='?section=eoi1&page=" . ($page - 1) . "&sort=$sortColumn&dir=$sortDir'>&laquo; Previous</a></Button>";
                         }
                     }
                     echo "</div>";
