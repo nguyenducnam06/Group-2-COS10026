@@ -114,6 +114,8 @@
   list-style-position: outside;
   padding-left: 12px;
   margin-left: 0;
+  display: inline-block;
+  align-content: left;
 }
 
 /* Styling for job details section */
@@ -141,6 +143,8 @@
   list-style-position: outside;
   padding-left: 24px;
   margin-left: 12px;
+  display: inline-block;
+  align-content: left;
 }
 .job_details ul li {
   font-style: italic;

@@ -50,6 +50,7 @@
   color: rgb(37, 37, 42);
 }
 
+/* Styling for displaying status of EOIs in table */
 select option {
     background: rgb(244, 200, 248);
     color: black;
@@ -84,6 +85,8 @@ input {
       background: linear-gradient(140deg, #aa3ef352, #e7a3d02d);
       color: rgb(37, 37, 42);
 }
+
+
 /* Table Styling */
 table {
   width: 100%;
@@ -114,4 +117,15 @@ table tr:nth-child(even) {
 
 table tr:hover {
   background-color: #e0e0e0;
+}
+
+#prev-page, #next-page {
+  margin-top: 24px;
+
+}
+#prev-page {
+ float: left;
+}
+#next-page {
+  float: right;
 }
