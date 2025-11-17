@@ -23,12 +23,23 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                     <label for="adminusername">Username</label>
                     <input id="adminusername" type="text" name="username" pattern="[a-z0-9]+" title="Enter your username" placeholder="admin123" required>
                     <label for="adminpassword">Password</label>
-                    <input id="adminpassword" type="password" name="password" title="Enter your password" placeholder="xxxxxxxx" required> 
+                    <input id="adminpassword" type="password" name="password" title="Enter your password" placeholder="xxxxxxxx" required>
                     <?php
-                        if (isset($_GET['error']) && $_GET['error'] == 'invalid') {
-                            echo '<p class="error-message">Wrong username or password</p>';
+                    if (isset($_GET['error'])) {
+
+                        // Wrong username or password
+                        if ($_GET['error'] === 'invalid') {
+                            echo '<p class="error-message">Wrong username or password.</p>';
                         }
+
+                        // Lockout message
+                        if ($_GET['error'] === 'locked' && isset($_GET['remaining'])) {
+                            $remaining = htmlspecialchars($_GET['remaining']);
+                            echo "<p class='error-message lockout'>Too many failed attempts. Try again in <strong>$remaining</strong> seconds.</p>";
+                        }
+                    }
                     ?>
+
                     <button type="submit" value="Login" class="primary">
                         Log In
                     </button>
