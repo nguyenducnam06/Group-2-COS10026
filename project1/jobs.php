@@ -51,7 +51,7 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 <input type="submit" value="Search">
             </form>
         </section>
-        <section class="row">
+        <section class="jobs-row">
             <?php
             if (!$dbconn) {
                 echo "<p>Database connection failure</p>";
@@ -99,7 +99,7 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
         <hr class="primary">
 
         <!-- Section 2: Jobs in Details -->
-        <section class="row">
+        <section class="jobs-row">
             <?php
             if (!$dbconn) {
                 echo "<p>Database connection failure</p>";
@@ -109,70 +109,49 @@ $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 $result1 = mysqli_query($dbconn, $sql1);
             }
             while ($jobs = mysqli_fetch_assoc($result1)) {
-                echo " <div class=\"job_details\" id=\"job" . $jobs['JobID'] . "\">
-                <article class=\"content\">
-                <h2>" . htmlspecialchars($jobs['JobTitle']) . "</h2>
-                <h5>" . htmlspecialchars($jobs['RefNum']) . "</h5>
-                <p>" . htmlspecialchars($jobs['Description']) . "</p>
-                <h3>Key Responsibilities:</h3> 
-                <ol>";
-                $sql2 = "SELECT * FROM responsibilities JOIN `jobs` ON responsibilities.JobID = jobs.JobID WHERE jobs.JobID = " . $jobs['JobID'];
-                $result2 = mysqli_query($dbconn, $sql2);
-                while ($resp = mysqli_fetch_assoc($result2)) {
-                    echo "<li>" . htmlspecialchars($resp['Content']) . "</li>";
-                }
-                mysqli_free_result($result2);
-                echo "</ol>";
-                echo "<h3>Qualifications:</h3>
-                <ol>
-                <li> Essentials
-                <ul>";
-                $sql3 = "SELECT * FROM qualifications JOIN `jobs` ON qualifications.JobID = jobs.JobID WHERE Type = 'Essentials' AND jobs.JobID = " . $jobs['JobID'];
-                $result3 = mysqli_query($dbconn, $sql3);
-                while ($qual = mysqli_fetch_assoc($result3)) {
-                    echo "<li>" . htmlspecialchars($qual['Content']) . "</li>";
-                }
-                mysqli_free_result($result3);
-                echo "</ul>
-                <li> Preferable
-                <ul>";
-                $sql4 = "SELECT * FROM qualifications JOIN `jobs` ON qualifications.JobID = jobs.JobID WHERE Type = 'Preferable' AND jobs.JobID = " . $jobs['JobID'];
-                $result4 = mysqli_query($dbconn, $sql4);
-                while ($qual = mysqli_fetch_assoc($result4)) {
-                    echo "<li>" . htmlspecialchars($qual['Content']) . "</li>";
-                }
-                mysqli_free_result($result4);
-                echo "</ul>
-                </li>
-                </ol>
-                </article>
-                <aside class=\"left_aligned content_background\">
-                    <h3>" . htmlspecialchars($jobs['Salary']) . "</h3>
-                    <div class=\"row\">
-                        <img src=\"images/svg/location-green.svg\" alt=\"Location\">
-                        <p>" . htmlspecialchars($jobs['Location']) . "</p>
-                    </div>
-                    <div class=\"row\">
-                        <img src=\"images/svg/time.svg\" alt=\"time\">
-                        <p>" . htmlspecialchars($jobs['EmpType']) . "</p>
-                    </div>
-                    <div class=\"row\">
-                        <img src=\"images/svg/level.svg\" alt=\"level\">
-                        <p>" . htmlspecialchars($jobs['ExpLevel']) . "</p>
-                    </div>
-                    <h3>Benefits</h3>
-                    <ul>";
-                $sql5 = "SELECT * FROM benefits JOIN jobs ON benefits.JobID = jobs.JobID WHERE jobs.JobID = " . $jobs['JobID'];
-                $result5 = mysqli_query($dbconn, $sql5);
-                while ($ben = mysqli_fetch_assoc($result5)) {
-                    echo "<li>" . htmlspecialchars($ben['Content']) . "</li>";
-                }
-                mysqli_free_result($result5);
-                echo "</ul>
-                <a class=\"primary\" href=\"apply.php\">Apply Now</a>
-                </aside>
-                </div>
-                <hr class=\"secondary\">";
+                    echo '<div class="job_details" id="job' . htmlspecialchars($jobs['JobID']) . '">';
+                    echo '<article class="content">';
+                    echo '<h2>' . htmlspecialchars($jobs['JobTitle']) . '</h2>';
+                    echo '<h5>' . htmlspecialchars($jobs['RefNum']) . '</h5>';
+                    echo '<p>' . htmlspecialchars($jobs['Description']) . '</p>';
+                    echo '<h3>Key Responsibilities:</h3><ol>';
+                    $sql2 = "SELECT * FROM responsibilities JOIN `jobs` ON responsibilities.JobID = jobs.JobID WHERE jobs.JobID = " . $jobs['JobID'];
+                    $result2 = mysqli_query($dbconn, $sql2);
+                    while ($resp = mysqli_fetch_assoc($result2)) {
+                        echo '<li>' . htmlspecialchars($resp['Content']) . '</li>';
+                    }
+                    mysqli_free_result($result2);
+                    echo '</ol>';
+
+                    echo '<h3>Qualifications:</h3><ol><li> Essentials<ul>';
+                    $sql3 = "SELECT * FROM qualifications JOIN `jobs` ON qualifications.JobID = jobs.JobID WHERE Type = 'Essentials' AND jobs.JobID = " . $jobs['JobID'];
+                    $result3 = mysqli_query($dbconn, $sql3);
+                    while ($qual = mysqli_fetch_assoc($result3)) {
+                        echo '<li>' . htmlspecialchars($qual['Content']) . '</li>';
+                    }
+                    mysqli_free_result($result3);
+                    echo '</ul><li> Preferable<ul>';
+                    $sql4 = "SELECT * FROM qualifications JOIN `jobs` ON qualifications.JobID = jobs.JobID WHERE Type = 'Preferable' AND jobs.JobID = " . $jobs['JobID'];
+                    $result4 = mysqli_query($dbconn, $sql4);
+                    while ($qual = mysqli_fetch_assoc($result4)) {
+                        echo '<li>' . htmlspecialchars($qual['Content']) . '</li>';
+                    }
+                    mysqli_free_result($result4);
+                    echo '</ul></li></ol></article>';
+
+                    echo '<aside class="left_aligned content_background">';
+                    echo '<h3>' . htmlspecialchars($jobs['Salary']) . '</h3>';
+                    echo '<div class="jobs-row"><img src="images/svg/location-green.svg" alt="Location"><p>' . htmlspecialchars($jobs['Location']) . '</p></div>';
+                    echo '<div class="jobs-row"><img src="images/svg/time.svg" alt="time"><p>' . htmlspecialchars($jobs['EmpType']) . '</p></div>';
+                    echo '<div class="jobs-row"><img src="images/svg/level.svg" alt="level"><p>' . htmlspecialchars($jobs['ExpLevel']) . '</p></div>';
+                    echo '<h3>Benefits</h3><ul>';
+                    $sql5 = "SELECT * FROM benefits JOIN jobs ON benefits.JobID = jobs.JobID WHERE jobs.JobID = " . $jobs['JobID'];
+                    $result5 = mysqli_query($dbconn, $sql5);
+                    while ($ben = mysqli_fetch_assoc($result5)) {
+                        echo '<li>' . htmlspecialchars($ben['Content']) . '</li>';
+                    }
+                    mysqli_free_result($result5);
+                    echo '</ul><a class="primary" href="apply.php">Apply Now</a></aside></div><hr class="secondary">';
             }
             mysqli_close($dbconn);
             ?>

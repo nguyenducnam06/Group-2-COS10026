@@ -50,10 +50,12 @@
   flex-shrink: 1;
 }
 
-/* Styling for job list in short form */
-.row {
-  margin-left: auto;
-  margin-right: auto;
+/* Styling for job list in short form (page-scoped)
+   - Use a page-specific class `.jobs-row` to avoid overriding the global
+     `.row` utility used site-wide. This prevents unexpected layout changes
+     (for example, footer/content alignment) when this stylesheet is loaded.
+*/
+.jobs-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -131,6 +133,16 @@
   margin-left: 0;
   display: inline-block;
   align-content: left;
+}
+
+.job_card a.primary,
+.job_details aside a.primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px 0;
+  margin-top: 12px;
 }
 
 /* Styling for job details section */
