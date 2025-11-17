@@ -65,12 +65,12 @@ mysqli_close($dbconn);
                 <div id="name">
                     <div class="textbox">
                         <label for="firstName">First name:</label>
-                        <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                        <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z ]{1,20}"
                             title="Please enter your first name" required>
                     </div>
                     <div class="textbox">
                         <label for="lastName">Last name:</label>
-                        <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}"
+                        <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z ]{1,20}"
                             title="Please enter your last name" required>
                     </div>
                 </div><br>

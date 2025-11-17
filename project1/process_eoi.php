@@ -47,8 +47,8 @@ $otherSkills = sanitize($_POST['otherSkills']);
 // --- re-Validate required fields ---
 $errors = [];
 
-if (!preg_match("/^[A-Za-z]+$/", $firstName)) $errors[] = "Invalid first name (letters only).";
-if (!preg_match("/^[A-Za-z]+$/", $lastName)) $errors[] = "Invalid last name (letters only).";
+if (!preg_match("/^[A-Za-z ]+$/", $firstName)) $errors[] = "Invalid first name (letters only).";
+if (!preg_match("/^[A-Za-z ]+$/", $lastName)) $errors[] = "Invalid last name (letters only).";
 if (!preg_match("/^\d{4}$/", $postcode)) $errors[] = "Postcode must be exactly 4 digits.";
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email format.";
 if (!preg_match("/^\d{8,12}$/", $phone)) $errors[] = "Phone number must contain 8–12 digits.";
