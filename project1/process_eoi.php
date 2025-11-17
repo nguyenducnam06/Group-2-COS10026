@@ -69,7 +69,7 @@ if (!empty($errors)) {
     exit();
 }
 
-// --- Generate EOINumber ---
+// --- Bind EOI number and applydate with sanitized data ---
 $EOINumber = generateEOINumber($conn);
 $applyDate = date("Y-m-d H:i:s");
 
