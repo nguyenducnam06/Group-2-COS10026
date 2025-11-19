@@ -174,7 +174,7 @@
   list-style-position: outside;
   padding-left: 24px;
   margin-left: 12px;
-  display: inline-block;
+  display: block;
   align-content: left;
 }
 .job_details ul li {
